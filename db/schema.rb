@@ -10,10 +10,66 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_152548) do
+ActiveRecord::Schema.define(version: 2021_11_22_162606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "option_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["option_id"], name: "index_answers_on_option_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "batches", force: :cascade do |t|
+    t.integer "camp"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "interactions", force: :cascade do |t|
+    t.text "content"
+    t.string "question"
+    t.text "html_content"
+    t.integer "position"
+    t.bigint "topic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["topic_id"], name: "index_interactions_on_topic_id"
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "title"
+    t.text "next_accroche"
+    t.integer "position"
+    t.bigint "interaction_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["interaction_id"], name: "index_options_on_interaction_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.datetime "post_at"
+    t.bigint "batch_id", null: false
+    t.bigint "topic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["batch_id"], name: "index_schedules_on_batch_id"
+    t.index ["topic_id"], name: "index_schedules_on_topic_id"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "title"
+    t.string "first_accroche"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_topics_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +79,21 @@ ActiveRecord::Schema.define(version: 2021_11_22_152548) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin"
+    t.string "first_name"
+    t.string "last_name"
+    t.bigint "batch_id"
+    t.index ["batch_id"], name: "index_users_on_batch_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "options"
+  add_foreign_key "answers", "users"
+  add_foreign_key "interactions", "topics"
+  add_foreign_key "options", "interactions"
+  add_foreign_key "schedules", "batches"
+  add_foreign_key "schedules", "topics"
+  add_foreign_key "topics", "users"
+  add_foreign_key "users", "batches"
 end
