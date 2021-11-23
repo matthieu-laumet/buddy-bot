@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-xs-12 col-sm-8 col-md-6">
+    <div>
+      <h1>Nouveau topic</h1>
+    </div>
+      <%= simple_form_for(topic) do |f| %>
+
+        <%-# ----------- Location form ----------- -%>
+        <div>
+          <div class="col-12">
+            <%= f.input :title, label: 'Titre', placeholder: 'Titre de mon article' %>
+          </div>
+        </div>
+        <%-# ----------- Date form ----------- -%>
+        <div class="col-12">
+          <%= f.input :first_accroche, label: "Accroche" %>
+        </div>
+        <%-# ----------- Passenger form ----------- -%>
+        <div class="col-12">
+          <%= f.input :description, label: "Description" %>
+        </div>
+        <div class="col-12 mt-4 d-flex justify-content-between align-items-center">
+        <%= f.button :submit, 'Créer!', class: 'btn btn-danger' %>
+      <% end %>
+        <%= link_to "Retour vers mes topics", topics_path, :class => "link-to" %>
+        </div>
+    </div>
+  </div>
+</div>

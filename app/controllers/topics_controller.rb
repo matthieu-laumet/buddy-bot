@@ -20,16 +20,16 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @interaction = Interaction.new
   end
- 
- 
+
   def edit
   end
 
-  def update
-    @topic.update(travel_params)
-    redirect_to topics_path
-  end
+  # def update
+  #   @topic.update(travel_params)
+  #   redirect_to topics_path
+  # end
 
   def destroy
     @topic.destroy
@@ -45,5 +45,5 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:title, :first_accroche, :description, :photo)
   end
-  
+
 end

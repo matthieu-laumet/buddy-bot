@@ -1,16 +1,24 @@
-<div class="container-index">
-  <h1>Mes topics</h1>
-  <div class="cards" style="width: 18rem;">
+<div class="container-topics">
+<h1>Mes topics</h1>
+
+<button class="btn-new-topic btn btn-danger">Créer un topic</button>
+<div class="modal-bg">
+  <div class="modal">
+      <%# <%= render 'form_topic', topic: @topic %> %>
+  </div>
+</div>
+
+  <div class="cards">
     <% @topics.each do |topic| %>
-    <div class="card-topic">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"><%= topic.title %></h5>
-        <h3 class="card-text"><%= topic.first_accroche %></h3>
-        <p class="card-text"><%= topic.description %></p>
-        <a href="#" class="btn btn-danger">Edit</a>
-      </div>
-    </div>
+        <div class="card-topic" style="width: 18rem;">
+          <img class="card-photo"src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-body">
+              <h5 class="card-title"><%= topic.title %></h5>
+              <h3 class="card-text"><%= topic.first_accroche %></h3>
+              <p class="card-text"><%= topic.description %></p>
+              <a href="#" class="btn btn-danger">Edit</a>
+            </div>
+        </div>
     <% end %>
   </div>
 </div>
