@@ -1,7 +1,7 @@
 class Topic < ApplicationRecord
   belongs_to :user
   has_many :schedules
-  has_many :interactions
+  has_many :interactions, dependent: :destroy
 
   validates :title, presence: true, uniqueness: true
   validates :first_accroche, :description, presence: true

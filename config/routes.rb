@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :topics do
-    resources :interactions
+    resources :interactions, except: [:destroy, :index, :new, :edit, :update]
     resources :schedules
   end
 
-  resources :interactions, only: [] do
+  resources :interactions, only: [:destroy] do
     resources :options
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

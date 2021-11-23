@@ -11,13 +11,14 @@ class InteractionsController < ApplicationController
     end
   end
 
-  def edit
-    @topic = Topic.find(params[:topic_id])
+  def destroy
     @interaction = Interaction.find(params[:id])
+    @interaction.destroy
+
+    redirect_to topic_path(@interaction.topic)
   end
 
-
   def interaction_params
-    params.require(:interaction).permit(:content, :question, :html_content, :position)
+    params.require(:interaction).permit(:content, :question, :html_content, :position, :photo)
   end
 end
