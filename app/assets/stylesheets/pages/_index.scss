@@ -9,7 +9,12 @@
   position: relative;
 }
 
-.card-topic {
-  display: flex;
-  align-items: flex-end;
-}
+
+h1 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    // padding-top: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 30px;
+  }
