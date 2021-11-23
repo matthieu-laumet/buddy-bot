@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :batch
+  belongs_to :batch, optional: true
   has_many :topics
   has_many :answers
   # Include default devise modules. Others available are:
@@ -7,6 +7,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
 end
