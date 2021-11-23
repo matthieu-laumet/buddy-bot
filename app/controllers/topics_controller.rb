@@ -19,6 +19,10 @@ class TopicsController < ApplicationController
     end
   end
 
+  def show
+  end
+ 
+ 
   def edit
   end
 
@@ -41,4 +45,5 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:title, :first_accroche, :description, :photo)
   end
+  
 end

@@ -1,0 +1,27 @@
+
+  <%= simple_form_for(interaction) do |f| %>
+
+    <div class="col-12">
+      <%= f.input :content, label: 'Contenu à caratère informatif', placeholder: 'Lorem ipsum dolor sit amet' %>
+    </div>
+    <div class="col-12">
+      <%= f.input :html_content, label: "Gif", placeholder: 'Ci-gît un gif' %>
+    </div>
+    <div class="col-12">
+      <% if interaction.photo.attached? %>
+        <%= cl_image_tag interaction.photo.key, class: "", height: 100, width: 100, crop: :fill %>
+      <% else %>
+        <%= image_tag("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGF0YXx8fHx8fDE2Mzc2Njc0NDU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080", class: "") %>
+      <% end %>
+      <%= f.input :photo, as: :file, class:"btn btn-light" %>
+    </div>
+    <div class="col-12">
+      <%= f.input :question, label: "Question", placeholder: 'Posez une question' %>
+    </div>
+    <div class="col-12">
+      <%= f.input :position, label: "Position de l'intéraction" %>
+    </div>
+    <div class="col-12 mt-4 d-flex justify-content-between align-items-center">
+    <%= f.button :submit, 'Créer!', class: 'btn btn-danger' %>
+    </div>
+  <% end %>
