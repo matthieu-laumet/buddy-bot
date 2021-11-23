@@ -6,9 +6,16 @@
         <h4><%=@topic.description  %></h4>
       </div>
       <div class="topics-components d-flex justify-content-center align-items-center">
-        <div class="interactions-form"></div>
-        <div class="interactions-preview"></div>
+        <div class="interactions-form">
+          <div class="col-6"></div>
+            <%= render '../interactions/new', interaction: @interaction %>
+        </div>
+        <div class="interactions-preview">
+          <div class="col-6"></div>
+
+        </div>
       </div>
+        <%= link_to "Retour vers mes topics", topics_path, :class => "link-to" %>
     </div>
   </div>
 </div>
