@@ -8,7 +8,7 @@
       <div class="topics-components d-flex justify-content-center align-items-center">
         <div class="interactions-form">
           <div class="col-6"></div>
-            <%= render '../interactions/new', interaction: @interaction %>
+            <%= render 'interactions/new', interaction: [ @topic, @interaction ] %>
         </div>
         <div class="interactions-preview">
           <div class="col-6"></div>
