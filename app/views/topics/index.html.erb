@@ -1,0 +1,16 @@
+<div class="container-index">
+  <h1>Mes topics</h1>
+  <div class="cards" style="width: 18rem;">
+    <% @topics.each do |topic| %>
+    <div class="card-topic">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= topic.title %></h5>
+        <h3 class="card-text"><%= topic.first_accroche %></h3>
+        <p class="card-text"><%= topic.description %></p>
+        <a href="#" class="btn btn-danger">Edit</a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

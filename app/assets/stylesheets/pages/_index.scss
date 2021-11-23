@@ -1,2 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container-index {
+  margin: 0 auto;
+  min-height: 79vh;
+  height: auto;
+  position: relative;
+}
+
+.card-topic {
+  display: flex;
+  align-items: flex-end;
+}
