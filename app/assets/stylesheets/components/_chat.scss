@@ -1,0 +1,107 @@
+.converse-bar {
+  width: 200px;
+  height: 80vh;
+  background-color: #4b3949;
+  color: #ada9ad;
+  text-align: center;
+}
+
+.converse-bar h2 {
+  font-size: 25px;
+  color: white;
+  margin-top: 18px;
+  margin-bottom: 7px;
+}
+
+.converse-bar h3 {
+  font-size: 17px;
+  color: white;
+  margin-top: 18px;
+}
+
+.converse-bar p {
+  font-size: 16px;
+  color: #ada9ad;
+}
+
+.converse-bar .converse-bullet-green {
+  font-size: 30px;
+  color: green;
+}
+
+.online-badge {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #1FE5BD;
+    margin-top: 2px;
+    margin-right: 8px;
+}
+
+.offline-badge {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ada9ad;
+    margin-top: 2px;
+    margin-right: 8px;
+}
+
+.fa-plus {
+  font-size: 16px;
+  color: white;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+}
+
+.converse-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.converse-strong p {
+  color: white;
+}
+
+.converse-list {
+  margin-bottom: 10px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  margin: 0 0;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 25px;
+  /* margin-bottom: 20px; */
+}
+h3 {
+  font-size: 23px;
+}
+.padded {
+  padding: 30px 0;
+}
+
+.container-chat {
+  margin: 30px auto;
+  width: 1200px;
+  height: 80vh;
+  padding: 0 0;
+  display: flex;
+  border: #4b3949 solid 1px;
+  border-radius: 10px;
+}

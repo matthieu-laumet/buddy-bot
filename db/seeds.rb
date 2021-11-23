@@ -8,6 +8,7 @@
 Answer.destroy_all
 Schedule.destroy_all
 Option.destroy_all
+Post.destroy_all
 Interaction.destroy_all
 Topic.destroy_all
 User.destroy_all
@@ -54,33 +55,103 @@ puts 'Creating 1 interaction...'
   )
   interaction.save!
   puts "Created #{interaction.content}"
+
+  interaction_2 = Interaction.new(
+    content: "interaction - Ceci est la 2e",
+    question: "On continue toujours ?",
+    html_content: "www.google.fr",
+    position: 2,
+    topic: topic
+  )
+  interaction_2.save!
+  puts "Created #{interaction_2.content}"
 #-------------------------------------
 puts 'Creating 1 option...'
-  option = Option.new(
+  option_1 = Option.new(
     title: "100% d'accord!",
     next_accroche: "next accroche pour continuer",
     position: 1,
     interaction: interaction
   )
-  option.save!
-  puts "Created #{option.title}"
+  option_1.save!
+
+  option_2 = Option.new(
+    title: "Bof !",
+    next_accroche: "next accroche",
+    position: 2,
+    interaction: interaction
+  )
+  option_2.save!
+
+  option_3 = Option.new(
+    title: "Pas tellement !",
+    next_accroche: "On arrete là !",
+    position: 3,
+    interaction: interaction
+  )
+  option_3.save!
+  puts "Created #{option_1.title}, #{option_2.title} et #{option_3.title}"
 #-------------------------------------
 puts 'Creating 1 schedule...'
   schedule = Schedule.new(
     batch: batch,
     topic: topic,
-    post_at: 2021-11-23
+    post_at: Date.today
   )
   schedule.save!
   puts "Created #{schedule}"
 #-------------------------------------
 puts 'Creating 1 answer...'
   answer = Answer.new(
-    option: option,
+    option: option_1,
     user: user
   )
   answer.save!
   puts "Created #{answer}"
 #-------------------------------------
+puts 'Creating 1 post...'
+  post_1 = Post.new(
+    user: user,
+    buddy: true,
+    form: false,
+    interaction: interaction,
+    content: interaction.topic.first_accroche
+    )
+    post_1.save!
+
+    post_2 = Post.new(
+    user: user,
+    buddy: true,
+    form: false,
+    interaction: interaction,
+    content: interaction.content
+    )
+    post_2.save!
+
+    post_3 = Post.new(
+    user: user,
+    buddy: true,
+    form: false,
+    interaction: interaction,
+    content: interaction.question
+    )
+    post_3.save!
+
+    # options = []
+
+    # interaction.options.each do |option|
+    #   options << option.title
+    # end
+
+    post_4 = Post.new(
+    user: user,
+    buddy: true,
+    form: true,
+    interaction: interaction,
+    content: ""
+    )
+    # content: options.join(', ')
+    # )
+    post_4.save!
 
 puts 'Finished!'
