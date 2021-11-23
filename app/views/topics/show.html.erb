@@ -52,8 +52,9 @@
                 </div>
                 <div class="card-interaction-notifications">
                   <p>
-                    <%#= link_to  %>
-                    <i class="fas fa-plus"></i> Ajouter une réponse</p>
+                    <%= link_to new_interaction_option_path(interaction) do %>
+                      <i class="fas fa-plus"></i> Ajouter une réponse</p>
+                    <% end %>
                   <p>
                     <%= link_to interaction_path(interaction),
                       method: :delete, remote: true,
