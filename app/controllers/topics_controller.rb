@@ -20,9 +20,9 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @interaction = Interaction.new
   end
- 
- 
+
   def edit
   end
 
@@ -45,5 +45,5 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:title, :first_accroche, :description, :photo)
   end
-  
+
 end

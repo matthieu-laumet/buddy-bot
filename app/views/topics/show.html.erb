@@ -5,13 +5,45 @@
         <h1><%=@topic.title  %></h1>
         <h4><%=@topic.description  %></h4>
       </div>
-      <div class="topics-components d-flex justify-content-center align-items-center">
+      <div class="topics-components d-flex justify-content-left align-items-center">
         <div class="interactions-form">
-          <div class="col-6"></div>
-            <%= render 'interactions/new', interaction: [ @topic, @interaction ] %>
+          <div class="col-12">
+            <%#= render 'interactions/new', interaction: [ @topic, @interaction ] %>
+
+            <%= simple_form_for([@topic, @interaction]) do |f| %>
+
+              <div class="">
+                <%= f.input :content, label: 'Contenu à caratère informatif', placeholder: 'Lorem ipsum dolor sit amet' %>
+              </div>
+              <div class="">
+                <%= f.input :html_content, label: "Gif", placeholder: 'Ci-gît un gif' %>
+              </div>
+              <div class="">
+                <%# if @interaction.photo.attached? %>
+                  <%#= cl_image_tag @interaction.photo.key, class: "", height: 100, width: 100, crop: :fill %>
+                <% #else %>
+                  <%#= image_tag("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGF0YXx8fHx8fDE2Mzc2Njc0NDU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080", class: "") %>
+                <% #end %>
+                <%= f.input :photo, as: :file, class:"btn btn-light" %>
+              </div>
+              <div class="">
+                <%= f.input :question, label: "Question", placeholder: 'Posez une question' %>
+              </div>
+              <div class="">
+                <%= f.input :position, label: "Position de l'intéraction" %>
+              </div>
+              <div class=" mt-4 d-flex justify-content-between align-items-center">
+              <%= f.button :submit, 'Créer!', class: 'btn btn-danger' %>
+              </div>
+            <% end %>
+
+          </div>
         </div>
         <div class="interactions-preview">
-          <div class="col-6"></div>
+          <div class="col-6">
+
+
+          </div>
 
         </div>
       </div>

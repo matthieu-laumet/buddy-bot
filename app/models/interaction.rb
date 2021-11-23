@@ -1,4 +1,5 @@
 class Interaction < ApplicationRecord
+
   belongs_to :topic
   has_many :options
 
