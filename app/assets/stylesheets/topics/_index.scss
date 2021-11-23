@@ -7,3 +7,36 @@
 // .container-topics{
 //   display: flex;
 // }
+
+.modal-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s Opacity 0,5s;
+}
+
+.bg-active{
+   visibility: visible;
+   opacity: 1;
+}
+
+.modal{
+  font-family: 'Montserra', sans-serif;
+  background-color: white;
+  width: 30%;
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+
+}
