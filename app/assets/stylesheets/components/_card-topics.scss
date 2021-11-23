@@ -1,15 +1,13 @@
-.card-links i {
-  color: #737373;
-  opacity: 0.6;
-}
-
-.card-links i:hover {
-  color: #737373;
-  opacity: 1;
-}
 
 
 .card-topic {
   align-items: flex-end;
   background: white;
+  border-radius: 10px;
+}
+
+.card-photo{
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
