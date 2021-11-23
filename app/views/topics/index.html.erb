@@ -1,5 +1,13 @@
 <div class="container-topics">
 <h1>Mes topics</h1>
+
+<button class="btn-new-topic btn btn-danger">Créer un topic</button>
+<div class="modal-bg">
+  <div class="modal">
+      <%# <%= render 'form_topic', topic: @topic %> %>
+  </div>
+</div>
+
   <div class="cards">
     <% @topics.each do |topic| %>
         <div class="card-topic" style="width: 18rem;">
