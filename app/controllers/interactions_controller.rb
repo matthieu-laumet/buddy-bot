@@ -11,6 +11,12 @@ class InteractionsController < ApplicationController
     end
   end
 
+  def edit
+    @topic = Topic.find(params[:topic_id])
+    @interaction = Interaction.find(params[:id])
+  end
+
+
   def interaction_params
     params.require(:interaction).permit(:content, :question, :html_content, :position)
   end

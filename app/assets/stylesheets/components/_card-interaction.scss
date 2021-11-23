@@ -31,3 +31,10 @@
 .card-interaction .card-interaction-infos {
   padding: 16px;
 }
+
+.card-interaction-notifications {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

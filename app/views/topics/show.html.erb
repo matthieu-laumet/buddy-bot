@@ -46,15 +46,31 @@
                 <img src="https://images.unsplash.com/photo-1554774853-b3d587d95440?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8aGFja2luZ3x8fHx8fDE2Mzc2ODE5NDI&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" />
                 <div class="card-interaction-infos">
                   <p>Position: <%= interaction.position %></p>
-                  <h2>Contenu:<%= interaction.content %></h2>
+                  <p>Contenu:<%= interaction.content %></p>
                   <p>Question:<%= interaction.question %></p>
                   <p>HTML content<%= interaction.html_content %></p>
+                </div>
+                <div class="card-interaction-notifications">
+                  <p><i class="fas fa-plus"></i> Ajouter une réponse</p>
+                  <p>
+                    <%= link_to edit_topic_interaction_path(interaction) do %>
+                      <i class="fas fa-pen"></i>Modifier
+                    <% end %>
+                  </p>
+                  <p>
+                    <%= link_to topic_interaction_path(interaction),
+                      method: :delete,
+                      data: { confirm: "Souhaitez-vous supprimer cette intéraction ?" } do %>
+                      <i class="fas fa-trash"></i>Supprimer
+                    <% end %>
+                  </p>
                 </div>
               </div>
               <% end %>
             <% end %>
           </div>
         </div>
+
       </div>
       <div>
         <%= link_to "Retour vers mes topics", topics_path, :class => "link-to" %>
