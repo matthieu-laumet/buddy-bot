@@ -7,7 +7,7 @@ class InteractionsController < ApplicationController
     if @interaction.save
       redirect_to topic_path(@interaction.topic)
     else
-      render "topics#show"
+      render :show
     end
   end
 
