@@ -1,21 +1,77 @@
 <div class="container">
-  <div class="row justify-content-center align-items-center">
-    <div class="col-xs-12 col-sm-8 col-md-6">
+    <div class="col-xs-12 col-sm-12 col-md-8">
       <div>
         <h1><%=@topic.title  %></h1>
         <h4><%=@topic.description  %></h4>
       </div>
-      <div class="topics-components d-flex justify-content-center align-items-center">
+      <div class="topics-components">
         <div class="interactions-form">
-          <div class="col-6"></div>
-            <%= render 'interactions/new', interaction: [ @topic, @interaction ] %>
-        </div>
-        <div class="interactions-preview">
-          <div class="col-6"></div>
+
+            <%#= render 'interactions/new', interaction: [ @topic, @interaction ] %>
+
+            <%= simple_form_for([@topic, @interaction]) do |f| %>
+
+              <div class="">
+                <%= f.input :content, label: 'Contenu à caratère informatif', placeholder: 'Lorem ipsum dolor sit amet' %>
+              </div>
+              <div class="">
+                <%= f.input :html_content, label: "Gif", placeholder: 'Ci-gît un gif' %>
+              </div>
+              <div class="">
+                <%# if @interaction.photo.attached? %>
+                  <%#= cl_image_tag @interaction.photo.key, class: "", height: 100, width: 100, crop: :fill %>
+                <% #else %>
+                  <%#= image_tag("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGF0YXx8fHx8fDE2Mzc2Njc0NDU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080", class: "") %>
+                <% #end %>
+                <%= f.input :photo, as: :file, class:"btn btn-light" %>
+              </div>
+              <div class="">
+                <%= f.input :question, label: "Question", placeholder: 'Posez une question' %>
+              </div>
+              <div class="">
+                <%= f.input :position, label: "Position de l'intéraction" %>
+              </div>
+              <div class="">
+              <%= f.button :submit, 'Créer votre topic', class: 'btn btn-danger' %>
+              </div>
+            <% end %>
 
         </div>
+
+        <div class="interactions-preview">
+          <div class="cards">
+            <% if @topic.interactions.present? %>
+              <% @topic.interactions.sort_by(&:position).each do |interaction| %>
+              <div class="card-interaction">
+                <img src="https://images.unsplash.com/photo-1554774853-b3d587d95440?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8aGFja2luZ3x8fHx8fDE2Mzc2ODE5NDI&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" />
+                <div class="card-interaction-infos">
+                  <p>Position: <%= interaction.position %></p>
+                  <p>Contenu:<%= interaction.content %></p>
+                  <p>Question:<%= interaction.question %></p>
+                  <p>HTML content<%= interaction.html_content %></p>
+                </div>
+                <div class="card-interaction-notifications">
+                  <p>
+                    <%= link_to new_interaction_option_path(interaction) do %>
+                      <i class="fas fa-plus"></i> Ajouter une réponse</p>
+                    <% end %>
+                  <p>
+                    <%= link_to interaction_path(interaction),
+                      method: :delete, remote: true,
+                      data: { confirm: "Souhaitez-vous supprimer cette interaction ?" } do %>
+                      <i class="fas fa-trash"></i>Supprimer
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
       </div>
+      <div>
         <%= link_to "Retour vers mes topics", topics_path, :class => "link-to" %>
+      </div>
     </div>
-  </div>
 </div>

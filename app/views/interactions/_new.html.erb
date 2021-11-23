@@ -1,5 +1,5 @@
 
-  <%= simple_form_for(interaction) do |f| %>
+  <%= simple_form_for(@topic, @interaction) do |f| %>
 
     <div class="col-12">
       <%= f.input :content, label: 'Contenu à caratère informatif', placeholder: 'Lorem ipsum dolor sit amet' %>

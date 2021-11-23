@@ -1,0 +1,38 @@
+.topics-components {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.interactions-form {
+  margin-right: 40px;
+  padding-right: 40px;
+  border-right: 0.7px solid black;
+  flex-grow: 1;
+}
+
+.interactions-preview {
+  padding-right: 40px;
+}
+
+/* -------- The responsive part -------- */
+
+@media (max-width: 992px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+@media (max-width: 768px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 300px;
+  }
+}

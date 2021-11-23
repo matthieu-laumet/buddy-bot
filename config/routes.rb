@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :topics do
-    resources :interactions
+    resources :interactions, except: [:destroy, :index, :new, :edit, :update]
     resources :schedules
   end
 
-  resources :interactions, only: [] do
-    resources :options
+  resources :interactions, only: [:destroy] do
+    resources :options, only: [:new, :create, :destroy]
   end
 
   resources :posts, only: :index
