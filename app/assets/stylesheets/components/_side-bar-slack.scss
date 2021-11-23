@@ -1,0 +1,27 @@
+.left-bar {
+  width: 80px;
+  height: 80vh;
+  background-color: #261b25;
+  color: #807b80;
+  text-align: center;
+  /* font-size: 16px; */
+  padding-top: 20px;
+  margin: 0 0;
+  border-radius: 10px 0 0 10px;
+}
+
+.btn-bg-color {
+  color: white;
+  font-size: 19px;
+  font-weight: bold;
+  background-color: #4e4a4e;
+  margin-bottom: 15px;
+}
+
+.left-bar-text h3 {
+  font-size: 18px;
+}
+
+.left-bar-text > h3:hover {
+  color: white;
+}

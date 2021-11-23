@@ -1,5 +1,11 @@
 class InteractionsController < ApplicationController
 
+  # def index
+  #   @schedules = Schedule.where(posted: false)
+  #   @topic = Topic.find(params[:topic_id])
+  #   @interactions = @topic.interactions
+  # end
+
   def new
     @topic = Topic.find(params[:topic_id])
     @interaction = Interaction.new
