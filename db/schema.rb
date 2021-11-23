@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_144729) do
     t.bigint "topic_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "posted", default: false
+    t.boolean "posted"
     t.index ["batch_id"], name: "index_schedules_on_batch_id"
     t.index ["topic_id"], name: "index_schedules_on_topic_id"
   end
