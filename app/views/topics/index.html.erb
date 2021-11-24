@@ -29,7 +29,11 @@
           </div>
           <div class="card-body-part">
             <div class="card-body">
+            <% if topic.title.length > 20 %>
+              <h3 class="card-title m-0"><%= topic.title[0..15] + "..." %></h5>
+            <% else %>
               <h3 class="card-title m-0"><%= topic.title %></h5>
+            <% end %>
             </div>
             <% if topic.description.length > 70 %>
               <p class="card-text"><%= topic.description[0..60] + "..." %></p>
