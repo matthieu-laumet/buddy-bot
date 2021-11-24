@@ -14,3 +14,10 @@
 @import "topics/show";
 @import "topics/index";
 
+
+a:hover {
+    color: unset;
+    text-decoration: none;
+}
+
+input, button, submit { border:none; }

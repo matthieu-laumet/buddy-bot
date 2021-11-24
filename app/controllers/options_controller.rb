@@ -1,12 +1,14 @@
 class OptionsController < ApplicationController
 
   def new
+    @interaction = Interaction.find(params[:interaction_id])
     @option = Option.new
   end
 
   def create
-    @interaction = Interaction.find(paralms[:interaction_id])
-    @option = Option.find(option_params)
+    @interaction = Interaction.find(params[:interaction_id])
+    @option = Option.new(option_params)
+    @option.interaction = @interaction
     if @option.save
       redirect_to topic_path(@interaction.topic)
     else
@@ -15,7 +17,7 @@ class OptionsController < ApplicationController
   end
 
   def destroy
-    @option = Option.find(params[:i])
+    @option = Option.find(params[:id])
     @option.destroy
 
     redirect_to topic_path(@interaction.topic)

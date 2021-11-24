@@ -52,12 +52,17 @@
                     </div>
                   </div>
                   <div class="card-interaction-notifications">
-                    <p><%#= interaction.option.count "option".pluralize "enregistrées".pluralize %> </p>
-                    <p>
-                      <%= link_to new_interaction_option_path(interaction) do %>
-                        <i class="fas fa-plus"></i><br>Ajouter une réponse
-                      <% end %>
+                    <p><%= interaction.options.count%> <%="options".pluralize %> </p>
+                    <p class="modal-btn-options">
+                      <i class="fas fa-plus"></i><br>Ajouter une réponse
                     </p>
+  <%# ---------------------------- Modal beginning ----------------------------  %>
+                    <div class="modal-bg">
+                      <div class="modal">
+                        <%= render 'form-option', option: Option.new, interaction: interaction %>
+                      </div>
+                    </div>
+  <%# ---------------------------- Modal end ----------------------------  %>
                     <p>
                       <%= link_to interaction_path(interaction),
                         method: :delete, remote: true,
@@ -69,6 +74,7 @@
                 </div>
                 <div class="card-interaction-infos hidden">
                   <div class="infos-border">
+                    <h5>Contenus enregistrés:</h5>
                     <p>Contenu: </p>
                     <span><%= interaction.content %></span>
                   </div>
@@ -80,7 +86,21 @@
                     <p>HTML content: </p>
                     <span><%= interaction.html_content %></span>
                   </div>
-
+                  <br>
+                  <div>
+                    <h5>Réponses enregistrées:</h5>
+                    <% if interaction.options.present? %>
+                      <% interaction.options.sort_by(&:position).each do |option| %>
+                      <p>
+                        <%= option.position %> - <%= option.title %>
+                        <%= link_to option_path(option),
+                          method: :delete, remote: true do %>
+                          <i class="fas fa-trash"></i>
+                        <% end %>
+                      </p>
+                      <% end %>
+                    <% end %>
+                  </div>
                 </div>
                 <div class="card-toggle"><h2><i class="fas fa-sort-down"></i></h2></div>
               </div>
