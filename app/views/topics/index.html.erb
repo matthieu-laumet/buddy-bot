@@ -1,24 +1,52 @@
-<div class="container-topics">
 <h1>Mes topics</h1>
+<div class="container-topics">
 
-<button class="btn-new-topic btn btn-danger">Créer un topic</button>
-<div class="modal-bg">
-  <div class="modal">
-      <%# <%= render 'form_topic', topic: @topic %> %>
+  <button class="btn-new-topic btn btn-danger modal-btn">Créer un topic</button>
+
+  <div class="modal-bg">
+    <div class="modal">
+        <%= render 'form_topic', topic: @topic %>
+    </div>
   </div>
-</div>
 
   <div class="cards">
     <% @topics.each do |topic| %>
-        <div class="card-topic" style="width: 18rem;">
-          <img class="card-photo"src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <%= button_to(
+        topic_path(topic),
+        method: :get,
+        class: "btn-stripped"
+      )do %>
+        <div class="card-topic">
+          <div class="card-photo-part">
+            <% if topic.photo.attached? %>
+              <%= cl_image_tag("#{topic.photo.key}", crop: :fill, class: "card-photo") %>
+            <% else %>
+              <%= image_tag 'https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', crop: :fill, class: "card-photo" %>
+            <% end %>
+            <%= link_to(
+              topic_path(topic),
+              method: :delete, remote: true,
+              data: { confirm: "Souhaitez-vous supprimer cette interaction ?" }
+            ) do %>
+              <i class="fas fa-trash card-trash"></i>
+            <% end %>
+          </div>
+          <div class="card-body-part">
             <div class="card-body">
-              <h5 class="card-title"><%= topic.title %></h5>
-              <h3 class="card-text"><%= topic.first_accroche %></h3>
-              <p class="card-text"><%= topic.description %></p>
-              <a href="#" class="btn btn-danger">Edit</a>
+            <% if topic.title.length > 20 %>
+              <h3 class="card-title m-0"><%= topic.title[0..15] + "..." %></h5>
+            <% else %>
+              <h3 class="card-title m-0"><%= topic.title %></h5>
+            <% end %>
             </div>
+            <% if topic.description.length > 70 %>
+              <p class="card-text"><%= topic.description[0..60] + "..." %></p>
+            <% else %>
+              <p class="card-text"><%= topic.description %></p>
+            <% end %>
+          </div>
         </div>
+      <% end %>
     <% end %>
   </div>
 </div>

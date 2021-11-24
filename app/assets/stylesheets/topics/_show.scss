@@ -5,6 +5,9 @@
 }
 
 .interactions-form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
   margin-right: 40px;
   padding-right: 40px;
   border-right: 0.7px solid black;
@@ -15,24 +18,15 @@
   padding-right: 40px;
 }
 
-/* -------- The responsive part -------- */
+.topic-title {
+  text-align: center;
+  align-items: center;
+  display: flex;
 
-@media (max-width: 992px) {
-  /* For a screen < 960px, this CSS will be read */
-  .container {
-    width: 700px;
-  }
-}
-@media (max-width: 768px) {
-  /* For a screen < 720px, this CSS will be read */
-  .container {
-    width: 500px;
-  }
 }
 
-@media (max-width: 576px) {
-  /* For a screen < 540px, this CSS will be read */
-  .container {
-    width: 300px;
-  }
+.banner{
+  height: 300px;
+  width: 80vw;
+  object-fit: cover;
 }

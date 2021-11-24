@@ -27,8 +27,13 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { btnDisable } from '../components/btns-option';
+import { actionModal } from '../components/modal_new_topic';
+import { showCard } from '../plugins/show-card';
+
 
 document.addEventListener('turbolinks:load', () => {
   btnDisable()
   // initSelect2();
+  actionModal();
+  showCard();
 });
