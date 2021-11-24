@@ -1,5 +1,5 @@
 <div class="container-chat">
-  <div class="left-bar">
+  <div class="side-bar">
     <div class="left-bar-text">
       <a href="#" class="btn btn-white btn-sm btn-bg-color">ML</a>
       <h3>SL</h3>
@@ -58,16 +58,26 @@
   </div>
 
   <div class="main-bar ml-3 mr-3 mt-3">
-    <div class="header p-1 border-bottom d-flex flex-row">
-      <%= image_tag 'slackbot_logo.png', class:'img-logo-chat mr-2 rounded'%><h2>Slackbot</h2>
+    <div class="header p-1 border-bottom">
+      <%= image_tag 'slackbot_logo.png', class:'img-logo-slack mr-2'%><h2>Slackbot</h2>
     </div>
-    <div class="badges">
-      <div class="badge d-flex justify-content-start text-left ml-2">
-        <%= image_tag 'logo-Jam-bot-02.png', width:"50px", class:"rounded" %>
-          <div class="badge-text ml-3 mt-1">
-          <h4>Buddy</h4>
-          <p>Hey everyone 👋 We’ve just launched a new Le Wagon <strong>UI Kit</strong> 🚀 👉 <a href="https://uikit.lewagon.com/">https://uikit.lewagon.com/</a></p>
-        </div>
+    <div class="messages">
+      <div class="message d-flex justify-content-start text-left ml-2">
+        <%= image_tag 'logo-Jam-bot-02.png', width:"50px", height:"45px", class:"rounded" %>
+          <div class="message-text ml-3 mt-1">
+            <h4>Buddy</h4>
+            <% @posts.each do |post| %>
+              <% if post[0] %>
+                <p><%= post.content %></p>
+              <% else %>
+                  <% if post.form == false %>
+                    <p><%= post.content %></p>
+                  <% else %>
+                    <p><%= render 'form_options', interaction: post.interaction %></p>
+                  <% end %>
+              <% end %>
+            <% end %>
+          </div>
       </div>
   </div>
 
