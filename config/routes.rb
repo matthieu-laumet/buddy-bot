@@ -11,13 +11,16 @@ Rails.application.routes.draw do
   end
 
   resources :interactions, only: [:destroy] do
-    resources :options, only: [:new, :create, :destroy]
+    resources :options, only: [:new, :create]
   end
 
-  resources :posts, only: [:index]
+  resources :options, only: :destroy
+
+  resources :posts, only: :index
 
   resources :options, only: [] do
     resources :answers, only: [:show, :new, :create]
   end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
