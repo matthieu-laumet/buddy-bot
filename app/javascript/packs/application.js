@@ -26,11 +26,13 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { btnDisable } from '../components/btns-option';
 import { actionModal } from '../components/modal_new_topic';
 import { showCard } from '../plugins/show-card';
 
+
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
+  btnDisable()
   // initSelect2();
   actionModal();
   showCard();
