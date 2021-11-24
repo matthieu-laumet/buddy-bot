@@ -20,5 +20,16 @@
 
 .topic-title {
   text-align: center;
-  margin: 40px;
+  align-items: center;
+  display: flex;
+
+}
+
+.banner-topic{
+  height: 150px;
+  width: 100%;
+
+  img{
+    object-fit: cover;
+  }
 }
