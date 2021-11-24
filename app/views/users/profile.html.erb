@@ -1,7 +1,7 @@
   <h1>Mon profil</h1>
   <div class="container-profile">
     <%= simple_form_for @user, url: user_registration_path do |f| %>
-      <div class="row" id="ploplo">
+      <div class="row-2" id="ploplo">
         <div class="col-md-3 border-right">
           <div class="d-flex flex-column align-items-center text-center">
               <% if current_user.photo.attached? %>
@@ -20,7 +20,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <h4 class="text-right">Profile Settings</h4>
               </div>
-              <div class="row">
+              <div class="row-2">
                 <div class="col-md-6">
                   <%= f.input :first_name, label: "Prénom", placeholder: 'Mon prénom', value: @user.first_name %>
                 </div>
@@ -28,7 +28,7 @@
                   <%= f.input :last_name, label: "Nom", placeholder: 'Mon nom', value: @user.last_name %>
                 </div>
               </div>
-              <div class="row">
+              <div class="row-2">
                 <div class="col-md-12">
                   <%= f.input :email, label: "Email", placeholder: 'Mon email', value: @user.email %>
                 </div>
@@ -40,29 +40,29 @@
           <div class="col-md-4">
               <h4 class="text-left">Changer mon mot de passe</h4>
 
-              <div class="row">
+              <div class="row-2">
                 <div class="col">
                   <div class="form-group">
                       <%= f.input :current_password, label: "Actuel", placeholder: '••••••', value: @user.password %>
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row-2">
                 <div class="col">
                   <div class="form-group">
                       <%= f.input :password, label: "Nouveau", placeholder: '••••••', value: @user.password %>
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row-2">
                 <div class="col">
                   <div class="form-group">
                       <%= f.input :password_confirmation, label: "Confirmation", placeholder: '••••••', value: @user.password %>
                   </div>
                 </div>
               </div>
-          </div>
         <%= f.button :submit, 'Confirmer',class: "btn btn-danger", id: "btn-profile" %>
+          </div>
       </div>
     <% end %>
   </div>
