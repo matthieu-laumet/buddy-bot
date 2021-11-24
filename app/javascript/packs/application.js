@@ -26,11 +26,13 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { actionModal } from '../components/modal_new_topic';
 // import { initSelect2 } from '../components/init_select2';
 import { showCard } from '../plugins/show-card';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  actionModal();
   showCard();
 });
