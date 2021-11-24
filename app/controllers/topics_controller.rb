@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.all
+    @topic = Topic.new
   end
 
   def new
@@ -15,7 +16,7 @@ class TopicsController < ApplicationController
       @topic.save
       redirect_to topic_path(@topic)
     else
-      render :new
+      render :index
     end
   end
 
