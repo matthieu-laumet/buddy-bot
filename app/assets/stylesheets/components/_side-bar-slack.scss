@@ -1,4 +1,4 @@
-.left-bar {
+.side-bar {
   width: 80px;
   height: 80vh;
   background-color: #261b25;
@@ -8,20 +8,16 @@
   padding-top: 20px;
   margin: 0 0;
   border-radius: 10px 0 0 10px;
-}
 
-.btn-bg-color {
-  color: white;
-  font-size: 19px;
-  font-weight: bold;
-  background-color: #4e4a4e;
-  margin-bottom: 15px;
-}
+  .btn-bg-color {
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    background-color: #4e4a4e;
+    margin-bottom: 15px;
+  }
 
-.left-bar-text h3 {
+  h3 {
   font-size: 18px;
-}
-
-.left-bar-text > h3:hover {
-  color: white;
+  }
 }

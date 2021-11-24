@@ -1,0 +1,45 @@
+.main-bar {
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .img-logo-slack {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: white solid 1px;
+  }
+}
+
+.messages {
+  width: 800px;
+}
+
+
+.message {
+  margin-top: 16px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 2px;
+    margin-bottom: 8px;
+  }
+}
+
+.chat-bar {
+  position: relative;
+  bottom: -280px;
+}

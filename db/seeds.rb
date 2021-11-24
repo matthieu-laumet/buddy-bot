@@ -38,7 +38,7 @@ puts 'Creating 1 user...'
 puts 'Creating 1 topic...'
   topic = Topic.new(
     title: "Onionland",
-    first_accroche: "Ca vous interesse d'en savoir plus?",
+    first_accroche: "Hello ! Je suis Captain Accroche ",
     description: "Au programme, tout un univers à porté d'onion!",
     user: user
   )
@@ -47,9 +47,9 @@ puts 'Creating 1 topic...'
 #-------------------------------------
 puts 'Creating 1 interaction...'
   interaction = Interaction.new(
-    content: "interaction - content test",
-    question: "On continue?",
-    html_content: "www.lewagon.fr",
+    content: "Au programme, tout un univers à porté d'onion! Un espace encore trop méconnu..",
+    question: "Tu veux en savoir plus ?",
+    html_content: "https://www.cnetfrance.fr/news/dark-web-comment-aller-sur-onion-land-et-ce-que-l-on-peut-y-trouver-39868394.htm",
     position: 1,
     topic: topic
   )
@@ -57,7 +57,7 @@ puts 'Creating 1 interaction...'
   puts "Created #{interaction.content}"
 
   interaction_2 = Interaction.new(
-    content: "interaction - Ceci est la 2e",
+    content: "Vous avez certainement déjà entendu parler du “dark web”, cet ensemble de sites inaccessibles depuis le Web classique, et qui nourrissent beaucoup de fantasmes - en particulier celui d’un vaste bazar, réservé aux initiés, dangereux et malsain, quelque part entre la série Mr Robot, les réseaux mafieux et les trafiquants de drogue. Mais la réalité est assez éloignée de cette image négative véhiculée par de nombreux médias.",
     question: "On continue toujours ?",
     html_content: "www.google.fr",
     position: 2,
