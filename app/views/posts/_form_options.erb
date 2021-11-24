@@ -1,3 +1,9 @@
 <% interaction.options.each do |option| %>
-    <%= link_to option.title, '#' , class:"btn btn-danger" %>
+  <%= link_to(
+    option.title,
+    option_answers_path(option) ,
+    class:"btn btn-danger btn-active",
+    data:"#{option.position}",
+    method: :post
+  ) %>
 <% end %>

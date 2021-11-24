@@ -26,9 +26,9 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { btnDisable } from '../components/btns-option';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
+  btnDisable()
   // initSelect2();
 });

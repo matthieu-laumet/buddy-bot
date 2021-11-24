@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_144729) do
+ActiveRecord::Schema.define(version: 2021_11_24_153357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_144729) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "content"
     t.index ["option_id"], name: "index_answers_on_option_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
@@ -69,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_144729) do
     t.bigint "topic_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "posted"
+    t.boolean "posted", default: false
     t.index ["batch_id"], name: "index_schedules_on_batch_id"
     t.index ["topic_id"], name: "index_schedules_on_topic_id"
   end
