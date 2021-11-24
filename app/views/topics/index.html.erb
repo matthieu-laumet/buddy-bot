@@ -18,7 +18,11 @@
       )do %>
         <div class="card-topic">
           <div class="card-photo-part">
-            <img class="card-photo"src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+            <% if topic.photo.attached? %>
+              <%= cl_image_tag("#{topic.photo.key}", crop: :fill, class: "card-photo") %>
+            <% else %>
+              <%= image_tag 'https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', crop: :fill, class: "card-photo" %>
+            <% end %>
             <%= link_to(
               topic_path(topic),
               method: :delete, remote: true,
@@ -29,7 +33,11 @@
           </div>
           <div class="card-body-part">
             <div class="card-body">
+            <% if topic.title.length > 20 %>
+              <h3 class="card-title m-0"><%= topic.title[0..15] + "..." %></h5>
+            <% else %>
               <h3 class="card-title m-0"><%= topic.title %></h5>
+            <% end %>
             </div>
             <% if topic.description.length > 70 %>
               <p class="card-text"><%= topic.description[0..60] + "..." %></p>

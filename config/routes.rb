@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'users/profile'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   root to: 'pages#home'
 
   resources :topics do
@@ -14,5 +17,10 @@ Rails.application.routes.draw do
   resources :options, only: :destroy
 
   resources :posts, only: :index
+
+  resources :options, only: [] do
+    resources :answers, only: [:show, :new, :create]
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

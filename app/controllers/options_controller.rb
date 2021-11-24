@@ -9,6 +9,7 @@ class OptionsController < ApplicationController
     @interaction = Interaction.find(params[:interaction_id])
     @option = Option.new(option_params)
     @option.interaction = @interaction
+
     if @option.save
       redirect_to topic_path(@interaction.topic)
     else

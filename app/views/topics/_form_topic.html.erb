@@ -12,6 +12,14 @@
             <%= f.input :title, label: 'Titre', placeholder: 'Titre de mon article' %>
           </div>
         </div>
+        <div class="">
+          <%# if @interaction.photo.attached? %>
+            <%#= cl_image_tag @interaction.photo.key, class: "", height: 100, width: 100, crop: :fill %>
+          <% #else %>
+            <%#= image_tag("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGF0YXx8fHx8fDE2Mzc2Njc0NDU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080", class: "") %>
+          <% #end %>
+          <%= f.input :photo, as: :file, class:"btn btn-light" %>
+        </div>
         <%-# ----------- Date form ----------- -%>
         <div class="">
           <%= f.input :first_accroche, label: "Accroche" %>

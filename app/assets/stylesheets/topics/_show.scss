@@ -20,5 +20,13 @@
 
 .topic-title {
   text-align: center;
-  margin: 40px;
+  align-items: center;
+  display: flex;
+
+}
+
+.banner{
+  height: 300px;
+  width: 80vw;
+  object-fit: cover;
 }
