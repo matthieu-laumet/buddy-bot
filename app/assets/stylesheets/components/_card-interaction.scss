@@ -61,6 +61,16 @@
   text-align: center;
   padding-top: 2px;
   margin-bottom: 15px;
+
+  i {
+    color: #5c5b5b;
+    opacity: 0.8;
+    font-size: 20px;
+  }
+
+  i:hover {
+    opacity: 1;
+  }
 }
 
 

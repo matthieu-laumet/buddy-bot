@@ -1,7 +1,7 @@
 
 const showCard = (item) => {
   const addCardInfos = document.querySelector(".card-interaction-infos");
-  const triggerBtn = document.querySelector(".fa-sort-down");
+  const triggerBtn = document.querySelector(".fa-chevron-down");
   if (triggerBtn) {
     triggerBtn.addEventListener("click", (event) => {
       addCardInfos.classList.toggle("hidden")
