@@ -13,7 +13,7 @@ class OptionsController < ApplicationController
     if @option.save
       redirect_to topic_path(@interaction.topic)
     else
-      render :show
+      redirect_to topic_path(@interaction.topic)
     end
   end
 

@@ -12,13 +12,8 @@
   height: 120px;
   width: 120px;
   object-fit: cover;
-}
-
-.img-placeholder {
   background-image: asset-url('img-placeholder.png');
-  height: 120px;
-  width: 120px;
-  object-fit: cover;
+  background-size: 120px 120px;
 }
 
 .card-interaction-contents {
@@ -42,7 +37,18 @@
   display: flex;
   flex-direction: column;
   align-items:flex-start;
-  padding: 15px 15px;
+  padding: 20px 25px;
+
+  i {
+    color: #5c5b5b;
+    opacity: 0.7;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  i:hover {
+    opacity: 1;
+  }
 }
 
 .hidden {
@@ -98,7 +104,7 @@
   margin-top: 8px;
 }
 
-.card-interaction .card-interaction-infos {
+.card-interaction {
   padding: 16px;
 }
 
@@ -133,4 +139,10 @@
     color: #5c5b5b;
     opacity: 0.7;
   }
+}
+
+.options-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
