@@ -8,18 +8,20 @@
         <% else %>
           <div class="container-banner">
             <%= image_tag 'https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', crop: :fill, class: "banner" %>
-            <h1><%=@topic.title  %></h1>
+            <h1><%=@topic.title%></h1>
           </div>
         <% end %>
-        <div class="mt-5 mb-5">
+      <div class="topics-components">
+        <div class="interactions-form">
+        <div>
           <h3><%=@topic.first_accroche  %></h3>
           <h6><%=@topic.description  %></h6>
         </div>
-      <div class="topics-components">
-        <div class="interactions-form">
-          <%# ---------------------------- form accordion beginning ---------------------------- %>
-            <%= render 'form_accordion', topic:@topic, interaction:@interaction %>
-          <%# ---------------------------- form accordion end ---------------------------- %>
+
+        <%# ---------------------------- form accordion beginning ---------------------------- %>
+          <%= render 'form_accordion', topic:@topic, interaction:@interaction %>
+        <%# ---------------------------- form accordion end ---------------------------- %>
+
         </div>
 
         <div class="interactions-preview">
@@ -54,7 +56,7 @@
                     </div>
                     <%# ---------------------------- Modal end ----------------------------  %>
                     <div>
-                      <p>
+                      <p class="delete-content-btn">
                         <%= link_to interaction_path(interaction),
                           method: :delete, remote: true,
                           data: { confirm: "Souhaitez-vous supprimer cette interaction ?" } do %>
@@ -65,37 +67,41 @@
                   </div>
                 </div>
                 <div class="card-interaction-infos hidden card-target-<%=interaction.id%>">
-                  <div class="infos-border">
-                    <h5>Contenus enregistrés:</h5>
-                    <p>Contenu: </p>
-                    <span><%= interaction.content %></span>
-                  </div>
-                  <div class="infos-border">
-                    <p>Question: </p>
-                    <span><%= interaction.question %></span>
-                  </div>
-                  <div class="infos-border">
-                    <p>HTML content: </p>
-                    <span><%= interaction.html_content %></span>
+                  <div class="content-theme-card">
+                    <div class="infos-border">
+                      <h5>Contenus enregistrés:</h5>
+                      <p>Contenu: </p>
+                      <span><%= interaction.content %></span>
+                    </div>
+                    <div class="infos-border">
+                      <p>Question: </p>
+                      <span><%= interaction.question %></span>
+                    </div>
+                    <div class="infos-border">
+                      <p>HTML content: </p>
+                      <span><%= interaction.html_content %></span>
+                    </div>
                   </div>
                   <br>
                   <div>
-                    <h5>Réponses enregistrées:</h5>
-                    <% if interaction.options.present? %>
-                      <% interaction.options.sort_by(&:position).each do |option| %>
-                      <div class="options-display">
-                        <div>
-                          <p><%= option.position %> - <%= option.title %></p>
+                    <div class="options-theme-card">
+                      <h5>Réponses enregistrées:</h5>
+                      <% if interaction.options.present? %>
+                        <% interaction.options.sort_by(&:position).each do |option| %>
+                        <div class="options-display">
+                          <div>
+                            <p><%= option.position %> - <%= option.title %></p>
+                          </div>
+                          <div>
+                            <%= link_to option_path(option),
+                              method: :delete, remote: true do %>
+                              <i class="fas fa-trash"></i>
+                            <% end %>
+                          </div>
                         </div>
-                        <div>
-                          <%= link_to option_path(option),
-                            method: :delete, remote: true do %>
-                            <i class="fas fa-trash"></i>
-                          <% end %>
-                        </div>
-                      </div>
+                        <% end %>
                       <% end %>
-                    <% end %>
+                    </div>
                   </div>
                 </div>
                 <div class="card-toggle" id="card-target-<%=interaction.id%>"><i class="fas fa-chevron-down"></i></i></div>
@@ -104,7 +110,6 @@
             <% end %>
           </div>
         </div>
-
       </div>
     </div>
 </div>

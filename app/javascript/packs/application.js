@@ -34,10 +34,12 @@ import { updateName } from '../components/change_name_user.js';
 
 
 document.addEventListener('turbolinks:load', () => {
-  btnDisable()
+  // btnDisable()
   // initSelect2();
   actionModal();
   showCard();
   updateEmail();
   updateName();
 });
+
+import "controllers"

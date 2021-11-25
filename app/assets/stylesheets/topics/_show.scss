@@ -14,9 +14,9 @@
   flex-grow: 1;
 }
 
-.interactions-preview {
-  padding-right: 40px;
-}
+// .interactions-preview {
+  // padding-right: 40px;
+// }
 
 .topic-title {
   text-align: center;
@@ -27,19 +27,79 @@
 
 .banner{
   height: 300px;
-  width: 80vw;
+  width: 85vw;
   object-fit: cover;
 }
 
 .container-banner{
   position:relative;
+  margin-bottom: 20px;
 
   .banner{
     background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
   }
   h1 {
     position: absolute;
-    top: 118px;
+    top: 90px;
     background-color: white;
+    padding: 20px;
   }
+}
+
+h3{
+  margin-top: 20px;
+}
+
+h6{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.container{
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.btn-danger{
+  margin-bottom: 10px;
+}
+
+
+.content-theme-card{
+  background-color: white;
+  padding: 10px;
+    .infos-border{
+      margin-bottom: 5px;
+    }
+}
+
+.options-theme-card{
+  background-color: white;
+  padding: 10px;
+  width: 57vh;
+    .infos-border{
+      margin-bottom: 5px;
+    }
+}
+
+.infos-border{
+  margin-bottom: 3px;
+  p{
+    margin-bottom:2px !important;
+    color:red;
+  }
+}
+
+.btn-notification:hover{
+  color: red;
+}
+
+.options-theme-card{
+  .fa-trash:hover{
+    color: red;
+  }
+}
+
+.delete-content-btn:hover{
+  color: red;
 }
