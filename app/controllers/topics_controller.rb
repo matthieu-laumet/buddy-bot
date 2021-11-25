@@ -12,8 +12,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = current_user.topics.new(topic_params)
-    if @topic.valid?
-      @topic.save
+    if @topic.save
       redirect_to topic_path(@topic)
     else
       render :index
