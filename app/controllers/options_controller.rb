@@ -9,10 +9,11 @@ class OptionsController < ApplicationController
     @interaction = Interaction.find(params[:interaction_id])
     @option = Option.new(option_params)
     @option.interaction = @interaction
-
     if @option.save
+      flash[:notice] = "Réponse ajoutée!"
       redirect_to topic_path(@interaction.topic)
     else
+      flash[:alert] = "This position #{@option.errors.messages[:position].first}. Please try another one."
       redirect_to topic_path(@interaction.topic)
     end
   end
