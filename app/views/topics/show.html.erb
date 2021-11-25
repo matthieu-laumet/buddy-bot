@@ -17,9 +17,11 @@
         </div>
       <div class="topics-components">
         <div class="interactions-form">
+
         <%# ---------------------------- form accordion beginning ---------------------------- %>
           <%= render 'form_accordion', topic:@topic, interaction:@interaction %>
         <%# ---------------------------- form accordion end ---------------------------- %>
+
         </div>
 
         <div class="interactions-preview">
@@ -107,7 +109,7 @@
 
       </div>
       <div>
-        <%= link_to "Retour vers mes topics", topics_path, :class => "link-to" %>
+        <%= link_to "Retour vers mes thèmes", topics_path, :class => "link-to" %>
       </div>
     </div>
 </div>
