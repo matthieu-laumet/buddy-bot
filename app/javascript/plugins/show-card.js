@@ -1,11 +1,12 @@
 
 const showCard = (item) => {
-  const addCardInfos = document.querySelectorAll(".card-interaction-infos");
-  const triggerBtns = document.querySelectorAll(".fa-chevron-down");
+
+  const triggerBtns = document.querySelectorAll(".card-toggle");
   if (triggerBtns) {
     triggerBtns.forEach((triggerBtn) => {
       triggerBtn.addEventListener("click", (event) => {
-        addCardInfos.classList.toggle("hidden")
+        const element = document.querySelector(".card-target-" + triggerBtn.id);
+        element.classList.toggle("hidden")
         triggerBtn.classList.toggle("rotate")
       });
     });
