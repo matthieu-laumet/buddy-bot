@@ -1,7 +1,7 @@
 .container-chat {
   margin: 30px auto;
   width: 1200px;
-  height: 80vh;
+  min-height: 80vh;
   padding: 0 0;
   display: flex;
   border: #4b3949 solid 1px;
@@ -10,7 +10,7 @@
 
 .converse-bar {
   width: 215px;
-  height: 80vh;
+  min-height: 80vh;
   background-color: #4b3949;
   color: #ada9ad;
   text-align: center;

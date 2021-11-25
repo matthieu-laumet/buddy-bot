@@ -13,3 +13,10 @@
 @import "pages/index";
 @import "users/index";
 @import "topics/index";
+
+a:hover {
+    color: unset;
+    text-decoration: none;
+}
+
+input, button, submit { border:none; }

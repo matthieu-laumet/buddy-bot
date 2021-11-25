@@ -1,11 +1,14 @@
 
 const showCard = (item) => {
-  const addCardInfos = document.querySelector(".card-interaction-infos");
-  const triggerBtn = document.querySelector(".fa-sort-down");
-  if (triggerBtn) {
-    triggerBtn.addEventListener("click", (event) => {
-      addCardInfos.classList.toggle("hidden")
-      triggerBtn.classList.toggle("rotate")
+
+  const triggerBtns = document.querySelectorAll(".card-toggle");
+  if (triggerBtns) {
+    triggerBtns.forEach((triggerBtn) => {
+      triggerBtn.addEventListener("click", (event) => {
+        const element = document.querySelector(".card-target-" + triggerBtn.id);
+        element.classList.toggle("hidden")
+        triggerBtn.classList.toggle("rotate")
+      });
     });
   }
 }

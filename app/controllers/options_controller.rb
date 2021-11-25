@@ -1,16 +1,19 @@
 class OptionsController < ApplicationController
 
   def new
+    @interaction = Interaction.find(params[:interaction_id])
     @option = Option.new
   end
 
   def create
     @interaction = Interaction.find(params[:interaction_id])
-    @option = Option.find(option_params)
+    @option = Option.new(option_params)
+    @option.interaction = @interaction
+
     if @option.save
       redirect_to topic_path(@interaction.topic)
     else
-      render :show
+      redirect_to topic_path(@interaction.topic)
     end
   end
 
