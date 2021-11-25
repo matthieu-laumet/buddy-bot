@@ -11,10 +11,14 @@ class AnswersController < ApplicationController
   def create
     @option = Option.find(params[:option_id])
     @answer = Answer.new(option_id: @option.id, user_id: current_user.id)
-    if @answer.save
-      redirect_to posts_path
-    else
-      render :posts
+    @answer.save!
+    # if @answer.save
+    #   redirect_to posts_path
+    # else
+    #   render :posts
+    # end
+    respond_to do |format|
+      format.js
     end
   end
 
