@@ -57,7 +57,7 @@ puts 'Creating 1 interaction...'
   puts "Created #{interaction.content}"
 
   interaction_2 = Interaction.new(
-    content: "Vous avez certainement déjà entendu parler du “dark web”, cet ensemble de sites inaccessibles depuis le Web classique, et qui nourrissent beaucoup de fantasmes - en particulier celui d’un vaste bazar, réservé aux initiés, dangereux et malsain, quelque part entre la série Mr Robot, les réseaux mafieux et les trafiquants de drogue. Mais la réalité est assez éloignée de cette image négative véhiculée par de nombreux médias.",
+    content: "Vous avez certainement déjà entendu parler du 'dark web', cet ensemble de sites inaccessibles depuis le Web classique, et qui nourrissent beaucoup de fantasmes - en particulier celui d’un vaste bazar, réservé aux initiés, dangereux et malsain, quelque part entre la série Mr Robot, les réseaux mafieux et les trafiquants de drogue. Mais la réalité est assez éloignée de cette image négative véhiculée par de nombreux médias.",
     question: "On continue toujours ?",
     html_content: "www.google.fr",
     position: 2,
@@ -65,11 +65,21 @@ puts 'Creating 1 interaction...'
   )
   interaction_2.save!
   puts "Created #{interaction_2.content}"
+
+   interaction_3 = Interaction.new(
+    content: "Mais d’abord un petit point vocabulaire, pour éviter les confusions. Pour utiliser les bons termes, sachez qu’au coeur même d’Internet, existent plusieurs réseaux uniquement accessibles par des logiciels spécifiques : le “dark net”. Le contenu du Web qui se trouve sur ces réseaux - des sites volontairement “cachés” et difficiles à trouver - est appelé “dark web”. Ces services ne sont pas indexés par les moteurs de recherche : ils font aussi partie du “deep web”, la partie du Web qui englobe tous les sites dont il faut connaître l’adresse afin de s’y rendre - en gros, le Web qui existait avant Google, Lycos et Altavista.",
+    question: "On continue toujours ?",
+    html_content: "www.google.fr",
+    position: 3,
+    topic: topic
+  )
+  interaction_3.save!
+  puts "Created #{interaction_2.content}"
 #-------------------------------------
 puts 'Creating 1 option...'
   option_1 = Option.new(
     title: "100% d'accord!",
-    next_accroche: "next accroche pour continuer",
+    next_accroche: "Super ! J'aime ta bonne humeur",
     position: 1,
     interaction: interaction
   )
@@ -77,7 +87,7 @@ puts 'Creating 1 option...'
 
   option_2 = Option.new(
     title: "Bof !",
-    next_accroche: "next accroche",
+    next_accroche: "Tkt pas ca va bien se passer ! C'est pas si dur à comprendre. Beaucoup plus simple que JavaScript !",
     position: 2,
     interaction: interaction
   )
@@ -85,11 +95,36 @@ puts 'Creating 1 option...'
 
   option_3 = Option.new(
     title: "Pas tellement !",
-    next_accroche: "On arrete là !",
+    next_accroche: "Hoooooooooo :'( Mais non regarde, c'est hyper interessant!",
     position: 3,
     interaction: interaction
   )
   option_3.save!
+
+  option_4 = Option.new(
+    title: "Ouiiiiii !! :) ",
+    next_accroche: "Trop bien !",
+    position: 1,
+    interaction: interaction_2
+  )
+  option_4.save!
+
+  option_5 = Option.new(
+    title: "C'est interessant mais.... !",
+    next_accroche: "Tu pourras briller en société après ça, je t'assure !",
+    position: 2,
+    interaction: interaction_2
+  )
+  option_5.save!
+
+  option_6 = Option.new(
+    title: "Non vraiment arrete stp !",
+    next_accroche: "Hooooo serieux ?! :'( Attends j'ai quand même un dernier truc à te dire!",
+    position: 3,
+    interaction: interaction_2
+  )
+  option_6.save!
+
   puts "Created #{option_1.title}, #{option_2.title} et #{option_3.title}"
 #-------------------------------------
 puts 'Creating 1 schedule...'

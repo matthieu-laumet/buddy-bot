@@ -1,0 +1,13 @@
+<div class="message d-flex justify-content-start text-left ml-2">
+  <%= image_tag 'logo-Jam-bot-02.png', width:"50px", height:"45px", class:"rounded img-buddy" %>
+  <div class="message-text ml-3 mt-1">
+    <h4>Buddy</h4>
+    <% @posts.each do |post| %>
+      <% if post.form %>
+        <p><%= render 'form_options', interaction: post.interaction %></p>
+      <% else %>
+        <p><%= post.content %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

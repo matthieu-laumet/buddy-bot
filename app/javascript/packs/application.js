@@ -29,7 +29,7 @@ import "bootstrap";
 import { btnDisable } from '../components/btns-option';
 import { actionModal } from '../components/modal_new_topic';
 import { showCard } from '../plugins/show-card';
-import { addAnswer } from '../plugins/add-answer';
+// import { addAnswer } from '../plugins/add-answer';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,3 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   actionModal();
   showCard();
 });
+
+import "controllers"

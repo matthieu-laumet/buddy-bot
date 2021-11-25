@@ -1,10 +1,30 @@
-<% interaction.options.each do |option| %>
-  <%= link_to(
-    option.title,
-    option_answers_path(option) ,
-    class:"btn btn-danger btn-active",
-    data:"#{option.position}",
-    method: :post,
-    remote: true
-  ) %>
+<% post.interaction.options.each do |option| %>
+  <% if post.active %>
+    <%= link_to(
+      option.title,
+      option_answers_path(option) ,
+      class:"btn btn-danger btn-active",
+      data:"#{option.position}",
+      method: :post,
+      remote: true
+    ) %>
+  <% elsif option.selected_by?(current_user) %>
+    <%= link_to(
+      option.title,
+      option_answers_path(option) ,
+      class:"btn btn-danger btn-disable-user",
+      data:"#{option.position}",
+      method: :post,
+      remote: true
+    ) %>
+  <% else %>
+    <%= link_to(
+      option.title,
+      option_answers_path(option) ,
+      class:"btn btn-danger btn-disable",
+      data:"#{option.position}",
+      method: :post,
+      remote: true
+    ) %>
+  <% end %>
 <% end %>
