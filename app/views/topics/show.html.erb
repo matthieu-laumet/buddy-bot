@@ -64,7 +64,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-interaction-infos hidden">
+                <div class="card-interaction-infos hidden card-target-<%=interaction.id%>">
                   <div class="infos-border">
                     <h5>Contenus enregistrés:</h5>
                     <p>Contenu: </p>
@@ -98,7 +98,7 @@
                     <% end %>
                   </div>
                 </div>
-                <div class="card-toggle"><i class="fas fa-chevron-down"></i></i></div>
+                <div class="card-toggle" id=<%=interaction.id%>><i class="fas fa-chevron-down"></i></i></div>
               </div>
               <% end %>
             <% end %>
