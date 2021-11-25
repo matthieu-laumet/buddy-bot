@@ -30,3 +30,16 @@
   width: 80vw;
   object-fit: cover;
 }
+
+.container-banner{
+  position:relative;
+
+  .banner{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+  }
+  h1 {
+    position: absolute;
+    top: 118px;
+    background-color: white;
+  }
+}
