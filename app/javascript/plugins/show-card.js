@@ -5,7 +5,7 @@ const showCard = (item) => {
   if (triggerBtns) {
     triggerBtns.forEach((triggerBtn) => {
       triggerBtn.addEventListener("click", (event) => {
-        const element = document.querySelector(".card-target-" + triggerBtn.id);
+        const element = document.querySelector("." + triggerBtn.id);
         element.classList.toggle("hidden")
         triggerBtn.classList.toggle("rotate")
       });
