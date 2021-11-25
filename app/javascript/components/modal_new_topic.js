@@ -15,14 +15,14 @@ const actionModal = () => {
     });
   }
 
-  if (modalCloseOption) {
-    triggerBtnOptions.forEach((triggerBtnOption) => {
-      modalCloseOption.addEventListener('click', (event) => {
-        const element = document.querySelector("." + triggerBtnOption.id);
-        element.classList.remove('bg-active');
-      })
-    })
-  }
+  // if (modalCloseOption) {
+  //   triggerBtnOptions.forEach((triggerBtnOption) => {
+  //     modalCloseOption.addEventListener('click', (event) => {
+  //       const element = document.querySelector("." + triggerBtnOption.id);
+  //       element.classList.remove('bg-active');
+  //     })
+  //   })
+  // }
 
   if (modalBtn) {
     modalBtn.addEventListener('click', (event) => {
