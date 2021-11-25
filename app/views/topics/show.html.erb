@@ -17,9 +17,11 @@
           <h3><%=@topic.first_accroche  %></h3>
           <h6><%=@topic.description  %></h6>
         </div>
+
         <%# ---------------------------- form accordion beginning ---------------------------- %>
           <%= render 'form_accordion', topic:@topic, interaction:@interaction %>
         <%# ---------------------------- form accordion end ---------------------------- %>
+
         </div>
 
         <div class="interactions-preview">
