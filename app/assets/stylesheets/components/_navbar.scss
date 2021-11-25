@@ -12,17 +12,29 @@
 }
 
 .nav-item {
-  padding: 0.35rem 0.5rem;
+  padding: 0.35rem 0.75rem;
   font-size: 1rem;
   border-radius: 3px;
   display: flex;
 }
+
 
 .nav-item:hover {
   background: black;
   color: white !important;
 }
 
+.nav-item-dropdown:hover {
+  color: white !important;
+  cursor: pointer;
+}
+
+.nav-item-dropdown {
+  padding: 0.35rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  display: flex;
+}
 .nav-link {
   font-weight: 400;
   color: white !important;

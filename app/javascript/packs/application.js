@@ -29,7 +29,8 @@ import "bootstrap";
 import { btnDisable } from '../components/btns-option';
 import { actionModal } from '../components/modal_new_topic';
 import { showCard } from '../plugins/show-card';
-// import { addAnswer } from '../plugins/add-answer';
+import { updateEmail } from '../components/change_email_user.js';
+import { updateName } from '../components/change_name_user.js';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -37,6 +38,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   actionModal();
   showCard();
+  updateEmail();
+  updateName();
 });
 
 import "controllers"

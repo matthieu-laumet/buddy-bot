@@ -8,7 +8,10 @@
   position: relative;
 }
 
-.card-interaction img {
+.card-interaction-img {
+  background-image: asset-url('img-placeholder.png');
+  background-size: 120px 120px;
+  object-fit: cover;
   height: 120px;
   width: 120px;
   object-fit: cover;
@@ -35,7 +38,18 @@
   display: flex;
   flex-direction: column;
   align-items:flex-start;
-  padding: 15px 15px;
+  padding: 20px 25px;
+
+  i {
+    color: #5c5b5b;
+    opacity: 0.7;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  i:hover {
+    opacity: 1;
+  }
 }
 
 .hidden {
@@ -52,13 +66,24 @@
   background: white !important;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   text-align: center;
-  padding-top: 2px;
+  padding-top: 9px;
   margin-bottom: 15px;
+
+  i {
+    color: #5c5b5b;
+    opacity: 0.7;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  i:hover {
+    opacity: 1;
+  }
 }
+
 
 .infos-border {
   display: 400px;
-  border-bottom: 0.7px solid white;
 
   p {
     color: rgb(183, 183, 183);
@@ -76,10 +101,10 @@
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 20px;
 }
 
-.card-interaction .card-interaction-infos {
+.card-interaction {
   padding: 16px;
 }
 
@@ -90,13 +115,14 @@
   align-items: center;
   position: absolute;
   text-align: center;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 16px;
 
   a {
     text-decoration: none;
     color: #5c5b5b;
     opacity: 0.7;
+    cursor: pointer;
   }
 
   a:hover {
@@ -105,13 +131,27 @@
 
   i {
     color: #5c5b5b;
-    opacity: 0.7;
+    opacity: 0.6;
+    cursor: pointer;
   }
 
   i:hover {
-    color: #5c5b5b;
-    opacity: 0.7;
+    opacity: 1;
   }
 
+  .btn-notification {
+    background-color: transparent;
+    opacity: 0.7;
+    cursor: pointer;
+  }
 
+  .btn-notification:hover {
+    opacity: 1;
+  }
+}
+
+.options-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

@@ -1,46 +1,26 @@
 <div class="container">
     <div>
          <% if @topic.photo.attached? %>
-              <%= cl_image_tag(@topic.photo.key, crop: :fill, class: "banner") %>
-            <% else %>
-              <%= image_tag 'https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', crop: :fill, class: "banner" %>
-            <% end %>
+          <div class="container-banner">
+            <%= cl_image_tag(@topic.photo.key, crop: :fill, class: "banner") %>
+            <h1><%=@topic.title  %></h1>
+          </div>
+        <% else %>
+          <div class="container-banner">
+            <%= image_tag 'https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', crop: :fill, class: "banner" %>
+            <h1><%=@topic.title  %></h1>
+          </div>
+        <% end %>
         <div>
-          <h1><%=@topic.title  %></h1>
           <h3><%=@topic.first_accroche  %></h3>
           <h6><%=@topic.description  %></h6>
         </div>
       <div class="topics-components">
         <div class="interactions-form">
 
-            <%#= render 'interactions/new', interaction: [ @topic, @interaction ] %>
-
-            <%= simple_form_for([@topic, @interaction]) do |f| %>
-
-              <div class="">
-                <%= f.input :content, label: 'Contenu à caratère informatif', placeholder: 'Lorem ipsum dolor sit amet' %>
-              </div>
-              <div class="">
-                <%= f.input :html_content, label: "Gif", placeholder: 'Ci-gît un gif' %>
-              </div>
-              <div class="">
-                <%# if @interaction.photo.attached? %>
-                  <%#= cl_image_tag @interaction.photo.key, class: "", height: 100, width: 100, crop: :fill %>
-                <% #else %>
-                  <%#= image_tag("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGF0YXx8fHx8fDE2Mzc2Njc0NDU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080", class: "") %>
-                <% #end %>
-                <%= f.input :photo, as: :file, class:"btn btn-light" %>
-              </div>
-              <div class="">
-                <%= f.input :question, label: "Question", placeholder: 'Posez une question' %>
-              </div>
-              <div class="">
-                <%= f.input :position, label: "Position de l'intéraction" %>
-              </div>
-              <div class="">
-              <%= f.button :submit, 'Créer votre thème', class: 'btn btn-danger' %>
-              </div>
-            <% end %>
+        <%# ---------------------------- form accordion beginning ---------------------------- %>
+          <%= render 'form_accordion', topic:@topic, interaction:@interaction %>
+        <%# ---------------------------- form accordion end ---------------------------- %>
 
         </div>
 
@@ -50,30 +30,45 @@
               <% @topic.interactions.sort_by(&:position).each do |interaction| %>
               <div>
                 <div class="card-interaction">
-                  <img src="https://images.unsplash.com/photo-1554774853-b3d587d95440?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8aGFja2luZ3x8fHx8fDE2Mzc2ODE5NDI&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" />
+                  <div class="card-interaction-img">
+                    <% if interaction.photo.attached? %>
+                      <%= cl_image_tag(interaction.photo.key, height: 120, width: 120, crop: :fill) %>
+                    <% end %>
+                  </div>
                   <div class="card-interaction-contents">
                     <div class="card-interaction-position">
-                      <h2>Interaction n°<%= interaction.position %></h2>
+                      <h2>Contenu n°<%= interaction.position %></h2>
                     </div>
                   </div>
                   <div class="card-interaction-notifications">
-                    <p><%#= interaction.option.count "option".pluralize "enregistrées".pluralize %> </p>
-                    <p>
-                      <%= link_to new_interaction_option_path(interaction) do %>
-                        <i class="fas fa-plus"></i><br>Ajouter une réponse
-                      <% end %>
-                    </p>
-                    <p>
-                      <%= link_to interaction_path(interaction),
-                        method: :delete, remote: true,
-                        data: { confirm: "Souhaitez-vous supprimer cette interaction ?" } do %>
-                        <i class="fas fa-trash"></i><br>Supprimer
-                      <% end %>
-                    </p>
+                    <div>
+                      <button class="btn-notification">
+                        <p class="modal-btn-options">
+                          <i class="fas fa-plus"></i><br>Ajouter une réponse
+                        </p>
+                      </button>
+                    </div>
+                    <%# ---------------------------- Modal beginning ----------------------------  %>
+                    <div class="modal-bg">
+                      <div class="modal-small">
+                        <%= render 'form_option', option: Option.new, interaction: interaction %>
+                      </div>
+                    </div>
+                    <%# ---------------------------- Modal end ----------------------------  %>
+                    <div>
+                      <p>
+                        <%= link_to interaction_path(interaction),
+                          method: :delete, remote: true,
+                          data: { confirm: "Souhaitez-vous supprimer cette interaction ?" } do %>
+                          <i class="fas fa-trash"></i><br>Supprimer le contenu
+                        <% end %>
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div class="card-interaction-infos hidden">
+                <div class="card-interaction-infos hidden card-target-<%=interaction.id%>">
                   <div class="infos-border">
+                    <h5>Contenus enregistrés:</h5>
                     <p>Contenu: </p>
                     <span><%= interaction.content %></span>
                   </div>
@@ -85,9 +80,27 @@
                     <p>HTML content: </p>
                     <span><%= interaction.html_content %></span>
                   </div>
-
+                  <br>
+                  <div>
+                    <h5>Réponses enregistrées:</h5>
+                    <% if interaction.options.present? %>
+                      <% interaction.options.sort_by(&:position).each do |option| %>
+                      <div class="options-display">
+                        <div>
+                          <p><%= option.position %> - <%= option.title %></p>
+                        </div>
+                        <div>
+                          <%= link_to option_path(option),
+                            method: :delete, remote: true do %>
+                            <i class="fas fa-trash"></i>
+                          <% end %>
+                        </div>
+                      </div>
+                      <% end %>
+                    <% end %>
+                  </div>
                 </div>
-                <div class="card-toggle"><h2><i class="fas fa-sort-down"></i></h2></div>
+                <div class="card-toggle" id=<%=interaction.id%>><i class="fas fa-chevron-down"></i></i></div>
               </div>
               <% end %>
             <% end %>
