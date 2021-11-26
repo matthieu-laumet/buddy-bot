@@ -35,34 +35,36 @@
                       <%= cl_image_tag(interaction.photo.key, height: 120, width: 120, crop: :fill) %>
                     <% end %>
                   </div>
-                  <div class="card-interaction-contents">
-                    <div class="card-interaction-position">
-                      <h2>Contenu n°<%= interaction.position %></h2>
-                    </div>
-                  </div>
-                  <div class="card-interaction-notifications">
-                    <div>
-                      <button class="btn-notification" id="option-target-<%=interaction.id%>">
-                        <p class="modal-btn-options">
-                          <i class="fas fa-plus"></i><br>Ajouter une réponse
-                        </p>
-                      </button>
-                    </div>
-                    <%# ---------------------------- Modal beginning ----------------------------  %>
-                    <div class="modal-bg option-target-<%=interaction.id%>">
-                      <div class="modal-small">
-                        <%= render 'form_option', option: Option.new, interaction: interaction %>
+                  <div class="card-interaction-description">
+                    <div class="card-interaction-contents">
+                      <div class="card-interaction-position">
+                        <h2>Contenu n°<%= interaction.position %></h2>
                       </div>
                     </div>
-                    <%# ---------------------------- Modal end ----------------------------  %>
-                    <div>
-                      <p class="delete-content-btn">
-                        <%= link_to interaction_path(interaction),
-                          method: :delete, remote: true,
-                          data: { confirm: "Souhaitez-vous supprimer cette interaction ?" } do %>
-                          <i class="fas fa-trash"></i><br>Supprimer le contenu
-                        <% end %>
-                      </p>
+                    <div class="card-interaction-notifications">
+                      <div>
+                        <button class="btn-notification" id="option-target-<%=interaction.id%>">
+                          <p class="modal-btn-options">
+                            <i class="fas fa-plus"></i><br>Ajouter une réponse
+                          </p>
+                        </button>
+                      </div>
+                      <%# ---------------------------- Modal beginning ----------------------------  %>
+                      <div class="modal-bg option-target-<%=interaction.id%>">
+                        <div class="modal-small">
+                          <%= render 'form_option', option: Option.new, interaction: interaction %>
+                        </div>
+                      </div>
+                      <%# ---------------------------- Modal end ----------------------------  %>
+                      <div>
+                        <p class="delete-content-btn">
+                          <%= link_to interaction_path(interaction),
+                            method: :delete, remote: true,
+                            data: { confirm: "Souhaitez-vous supprimer cette interaction ?" } do %>
+                            <i class="fas fa-trash"></i><br>Supprimer le contenu
+                          <% end %>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
