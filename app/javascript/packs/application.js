@@ -26,11 +26,12 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import { btnDisable } from '../components/btns-option';
+// import { btnDisable } from '../components/btns-option';
 import { actionModal } from '../components/modal_new_topic';
 import { showCard } from '../plugins/show-card';
 import { updateEmail } from '../components/change_email_user.js';
 import { updateName } from '../components/change_name_user.js';
+import { sleepMessage } from '../plugins/sleep_message';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   showCard();
   updateEmail();
   updateName();
+  sleepMessage();
 });
 
 import "controllers"
