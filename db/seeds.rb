@@ -232,15 +232,15 @@ puts 'Creating 1 user...'
     #   options << option.title
     # end
 
-    post_4 = Post.new(
-    user: student,
-    buddy: true,
-    form: true,
-    interaction: interaction,
-    content: ""
-    )
-    # content: options.join(', ')
-    # )
-    post_4.save!
+#     post_4 = Post.new(
+#     user: student,
+#     buddy: true,
+#     form: true,
+#     interaction: interaction,
+#     content: ""
+#     )
+#     # content: options.join(', ')
+#     # )
+#     post_4.save!
 
-puts 'Finished!'
+# puts 'Finished!'
