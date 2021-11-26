@@ -104,7 +104,7 @@ GEM
     ffi (1.15.4)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
-    globalid (1.0.0)
+    globalid (0.6.0)
       activesupport (>= 5.0)
     haml (5.2.2)
       temple (>= 0.8.0)
@@ -154,7 +154,11 @@ GEM
     nested_form (0.3.2)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.12.5-arm64-darwin)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -301,7 +305,11 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
+
   arm64-darwin-20
+  x86_64-darwin-20
+  x86_64-linux
+
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
@@ -337,4 +345,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.29
+   2.2.32
