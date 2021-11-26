@@ -1,24 +1,17 @@
 const sleepMessage = () => {
+  const messages = document.querySelectorAll(".d-none")
+  var i = 0;
+  myLoop(i, messages);
+}
 
-  // messages.classList.remove("d-none")
-
-  // messages.forEach((message) => {
-  //     message.classList.remove("d-none")
-  //   });
-    // var i = 1;
-
-  // function myLoop() {
-  //   const messages = document.querySelectorAll(".d-none")
-  //   messages.forEach((message) => {
-  //     // console.log('World')
-  //     setTimeout(function () {
-  //       console.log('hello');
-  //     }, 3000)
-  //   });
-  // }
-
-  // myLoop();
-
+function myLoop(i, messages) {
+  setTimeout(function () {
+    messages[i].classList.remove("d-none")
+    i++;
+    if (i < messages.length) {
+      myLoop(i, messages);
+    }
+  }, 800)
 }
 
 export { sleepMessage };

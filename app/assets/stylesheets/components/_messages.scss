@@ -20,6 +20,7 @@
 
 .messages {
   width: 800px;
+  min-height: 445px;
 
   .img-buddy {
     height: 52px;
@@ -51,6 +52,7 @@
 }
 
 .chat-bar {
-  position: fixed;
-  bottom: 60px;
+  // position: fixed;
+  // bottom: 60px;
+  margin-bottom: 20px;
 }
