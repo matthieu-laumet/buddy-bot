@@ -34,6 +34,10 @@
                     <% if interaction.photo.attached? %>
                       <%= cl_image_tag(interaction.photo.key, height: 120, width: 120, crop: :fill) %>
                     <% end %>
+                    <% if interaction.html_content.present? %>
+                      <iframe src="<%= interaction.html_content %>" width="120" height="120" frameBorder="0" >
+                      </iframe>
+                    <% end %>
                   </div>
                   <div class="card-interaction-description">
                     <div class="card-interaction-contents">
