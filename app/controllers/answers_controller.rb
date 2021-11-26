@@ -25,7 +25,7 @@ class AnswersController < ApplicationController
       Post.create!(user: current_user, interaction: @next_interaction, buddy: true, form: true, content: "")
     end
 
-    redirect_to posts_path
+    redirect_to posts_path(anchor: "option-#{Answer.last.id}")
   end
 
   private

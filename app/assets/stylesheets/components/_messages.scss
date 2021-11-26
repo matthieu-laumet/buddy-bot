@@ -25,6 +25,10 @@
     height: 52px;
     width: 58px;
   }
+
+  .img-user {
+    object-fit: cover;
+  }
 }
 
 
@@ -48,5 +52,5 @@
 
 .chat-bar {
   position: relative;
-  bottom: -280px;
+  bottom: -140px;
 }
