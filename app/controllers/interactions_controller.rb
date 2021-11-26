@@ -15,7 +15,7 @@ class InteractionsController < ApplicationController
   def destroy
     @interaction = Interaction.find(params[:id])
     @interaction.destroy
-
+    flash[:notice] = "Contenu supprimé!"
     redirect_to topic_path(@interaction.topic)
   end
 
