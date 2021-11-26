@@ -4,7 +4,7 @@ class Schedule < ApplicationRecord
 
   def self.sending
     # itérer sur ces schedules
-    self.each do |schedule|
+    self.all.each do |schedule|
       # passer posted a true
       schedule.posted = true
       schedule.save
