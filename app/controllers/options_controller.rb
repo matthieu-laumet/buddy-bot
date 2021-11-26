@@ -22,7 +22,7 @@ class OptionsController < ApplicationController
     @option = Option.find(params[:id])
     @option.destroy
 
-    redirect_to topic_path(@interaction.topic)
+    redirect_to topic_path(@option.topic)
   end
 
   private

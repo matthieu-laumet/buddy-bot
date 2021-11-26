@@ -7,7 +7,7 @@ class InteractionsController < ApplicationController
     if @interaction.save
       redirect_to topic_path(@interaction.topic)
     else
-      flash[:alert] = "The position #{@interaction.errors.messages[:position].first}."
+      flash[:alert] = "It #{@interaction.errors.messages[:position].first}."
       redirect_to topic_path(@interaction.topic)
     end
   end

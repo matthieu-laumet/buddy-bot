@@ -1,5 +1,7 @@
 class Option < ApplicationRecord
   belongs_to :interaction
+  has_one :topic, through: :interaction
+
   has_many :answers, dependent: :destroy
 
   validates :title, presence: true
