@@ -42,14 +42,14 @@
                   </div>
                   <div class="card-interaction-notifications">
                     <div>
-                      <button class="btn-notification">
+                      <button class="btn-notification" id="option-target-<%=interaction.id%>">
                         <p class="modal-btn-options">
                           <i class="fas fa-plus"></i><br>Ajouter une réponse
                         </p>
                       </button>
                     </div>
                     <%# ---------------------------- Modal beginning ----------------------------  %>
-                    <div class="modal-bg">
+                    <div class="modal-bg option-target-<%=interaction.id%>">
                       <div class="modal-small">
                         <%= render 'form_option', option: Option.new, interaction: interaction %>
                       </div>
@@ -104,7 +104,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-toggle" id=<%=interaction.id%>><i class="fas fa-chevron-down"></i></i></div>
+                <div class="card-toggle" id="card-target-<%=interaction.id%>"><i class="fas fa-chevron-down"></i></i></div>
               </div>
               <% end %>
             <% end %>

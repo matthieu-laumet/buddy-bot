@@ -154,7 +154,9 @@ GEM
     nested_form (0.3.2)
     netrc (0.11.0)
     nio4r (2.5.8)
+
     nokogiri (1.12.5-x86_64-darwin)
+
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -300,8 +302,9 @@ GEM
       nokogiri (~> 1.8)
     zeitwerk (2.5.1)
 
-PLATFORMS
+
   x86_64-darwin-20
+
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
@@ -337,4 +340,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.32
+   2.2.29

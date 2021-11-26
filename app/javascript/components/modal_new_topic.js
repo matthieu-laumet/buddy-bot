@@ -1,12 +1,26 @@
 const actionModal = () => {
   const modalBtn = document.querySelector('.modal-btn');
-  const modalBtnOptions = document.querySelector('.modal-btn-options')
   const modalBg = document.querySelector('.modal-bg');
   const modalClose = document.querySelector('.modal-close');
+  const modalCloseOption = document.querySelector('.modal-close-option');
 
-  if (modalBtnOptions) {
-    modalBtnOptions.addEventListener('click', (event) => {
-      modalBg.classList.add('bg-active');
+  const triggerBtnOptions = document.querySelectorAll('.btn-notification')
+
+  if (triggerBtnOptions) {
+    triggerBtnOptions.forEach((triggerBtnOption) => {
+      triggerBtnOption.addEventListener('click', (event) => {
+        const element = document.querySelector("." + triggerBtnOption.id);
+        element.classList.add('bg-active');
+      })
+    });
+  }
+
+  if (modalCloseOption) {
+    triggerBtnOptions.forEach((triggerBtnOption) => {
+      modalCloseOption.addEventListener('click', (event) => {
+        const element = document.querySelector("." + triggerBtnOption.id);
+        element.classList.remove('bg-active');
+      })
     })
   }
 
