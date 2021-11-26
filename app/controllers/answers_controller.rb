@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
     @next_interaction = @last_interaction.topic.interactions.where(position: @last_interaction.position + 1).first
     @answer.save!
     #post affiche la reponse de user (buddy = false)
-    Post.all.where(user: current_user).last.update(active:false)
+    Post.all.where(user: current_user).update(active:false)
     Post.create!(user: current_user, interaction: @last_interaction, buddy: false, content: @option.title, form: false)
 
     if @next_interaction
