@@ -33,14 +33,25 @@ puts 'Creating 1 user...'
     password: "azerty"
   )
   user.save!
-  puts "Created #{user.first_name}"
+
+  student = User.new(
+    first_name: "Matthieu",
+    last_name: "Laumet",
+    batch: batch,
+    admin: false,
+    email: "matmat@buddy.fr",
+    password: "azerty"
+  )
+  student.save!
+
+  puts "Created #{student.first_name}"
 #-------------------------------------
 puts 'Creating 1 topic...'
   topic = Topic.new(
     title: "Onionland",
     first_accroche: "Hello ! Je suis Captain Accroche ",
     description: "Au programme, tout un univers à porté d'onion!",
-    user: user
+    user: student
   )
   topic.save!
   puts "Created #{topic.title}"
@@ -87,7 +98,7 @@ puts 'Creating 1 interaction...'
 #-------------------------------------
 puts 'Creating 1 option...'
   option_1 = Option.new(
-    title: "100% d'accord!",
+    title: "100% d'accord! 😍😄🤗",
     next_accroche: "Super ! J'aime ta bonne humeur",
     position: 1,
     interaction: interaction
@@ -95,7 +106,7 @@ puts 'Creating 1 option...'
   option_1.save!
 
   option_2 = Option.new(
-    title: "Bof !",
+    title: "Bof ! 🤔🥱",
     next_accroche: "Tkt pas ca va bien se passer ! C'est pas si dur à comprendre. Beaucoup plus simple que JavaScript !",
     position: 2,
     interaction: interaction
@@ -103,7 +114,7 @@ puts 'Creating 1 option...'
   option_2.save!
 
   option_3 = Option.new(
-    title: "Pas tellement !",
+    title: "Pas tellement 🙎‍♂️😒",
     next_accroche: "Hoooooooooo :'( Mais non regarde, c'est hyper interessant!",
     position: 3,
     interaction: interaction
@@ -111,7 +122,7 @@ puts 'Creating 1 option...'
   option_3.save!
 
   option_4 = Option.new(
-    title: "Ouiiiiii !! :) ",
+    title: "Ouiiiiii !! 🤗👍🥳 ",
     next_accroche: "Trop bien !",
     position: 1,
     interaction: interaction_2
@@ -119,7 +130,7 @@ puts 'Creating 1 option...'
   option_4.save!
 
   option_5 = Option.new(
-    title: "C'est interessant mais.... !",
+    title: "C'est interessant mais.... 🥱",
     next_accroche: "Tu pourras briller en société après ça, je t'assure !",
     position: 2,
     interaction: interaction_2
@@ -127,7 +138,7 @@ puts 'Creating 1 option...'
   option_5.save!
 
   option_6 = Option.new(
-    title: "Non vraiment arrete stp !",
+    title: "Non vraiment arrete stp 😡",
     next_accroche: "Hooooo serieux ?! :'( Attends j'ai quand même un dernier truc à te dire!",
     position: 3,
     interaction: interaction_2
@@ -172,14 +183,14 @@ puts 'Creating 1 schedule...'
 puts 'Creating 1 answer...'
   answer = Answer.new(
     option: option_1,
-    user: user
+    user: student
   )
   answer.save!
   puts "Created #{answer}"
 #-------------------------------------
 puts 'Creating 1 post...'
   post_1 = Post.new(
-    user: user,
+    user: student,
     buddy: true,
     form: false,
     interaction: interaction,
@@ -188,7 +199,7 @@ puts 'Creating 1 post...'
     post_1.save!
 
     post_2 = Post.new(
-    user: user,
+    user: student,
     buddy: true,
     form: false,
     interaction: interaction,
@@ -197,7 +208,7 @@ puts 'Creating 1 post...'
     post_2.save!
 
     post_3 = Post.new(
-    user: user,
+    user: student,
     buddy: true,
     form: false,
     interaction: interaction,
@@ -212,7 +223,7 @@ puts 'Creating 1 post...'
     # end
 
     post_4 = Post.new(
-    user: user,
+    user: student,
     buddy: true,
     form: true,
     interaction: interaction,
