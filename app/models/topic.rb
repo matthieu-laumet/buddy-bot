@@ -4,6 +4,6 @@ class Topic < ApplicationRecord
   has_many :interactions, dependent: :destroy
   has_one_attached :photo
 
-  validates :title, presence: true, uniqueness: true
-  validates :first_accroche, :description, presence: true
+  validates :title, presence: true
+  validates :first_accroche, presence: true
 end
