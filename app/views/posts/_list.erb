@@ -18,7 +18,7 @@
       <div class="message-text ml-3 mt-1">
         <h4>Matthieu</h4>
         <%#= raise %>
-        <%= Answer.last.option.title %>
+       <p id="option-<%= Answer.last.id %>"><%= Answer.last.option.title %></p>
       </div>
     </div>
   <% end %>

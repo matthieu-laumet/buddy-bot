@@ -74,6 +74,15 @@ puts 'Creating 1 interaction...'
     topic: topic
   )
   interaction_3.save!
+
+  interaction_4 = Interaction.new(
+    content: "Ok très bien, on s'arrète là.",
+    question: "Bonne nuit et à demain !",
+    html_content: "www.google.fr",
+    position: 4,
+    topic: topic
+  )
+  interaction_4.save!
   puts "Created #{interaction_2.content}"
 #-------------------------------------
 puts 'Creating 1 option...'
@@ -124,6 +133,30 @@ puts 'Creating 1 option...'
     interaction: interaction_2
   )
   option_6.save!
+
+  option_7 = Option.new(
+    title: "S'il te plat ! ",
+    next_accroche: "Wonderbar ",
+    position: 1,
+    interaction: interaction_3
+  )
+  option_7.save!
+
+  option_8 = Option.new(
+    title: "Pourquoi pas !",
+    next_accroche: "Ahh bonne réponse ! Je sens qu'on va devenir de bons amis",
+    position: 2,
+    interaction: interaction_3
+  )
+  option_8.save!
+
+  option_9 = Option.new(
+    title: "Vas y t'es trop relou à pas vouloir arreter",
+    next_accroche: "On apprend tout au long de la vie mon grand. Tu en auras quand même encore un peu",
+    position: 3,
+    interaction: interaction_3
+  )
+  option_9.save!
 
   puts "Created #{option_1.title}, #{option_2.title} et #{option_3.title}"
 #-------------------------------------
