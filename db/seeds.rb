@@ -25,11 +25,21 @@ puts 'Creating 1 batch...'
 #-------------------------------------
 puts 'Creating 1 user...'
   user = User.new(
-    first_name: "Melanie",
-    last_name: "Couronne",
+    first_name: "Julia",
+    last_name: "Wagon",
     batch: batch,
     admin: true,
-    email: "mcouronne@gmail.com",
+    email: "julia@gmail.com",
+    password: "azerty"
+  )
+  user.save!
+
+  user = User.new(
+    first_name: "Chris",
+    last_name: "Marchand",
+    batch: batch,
+    admin: false,
+    email: "chris@gmail.com",
     password: "azerty"
   )
   user.save!
