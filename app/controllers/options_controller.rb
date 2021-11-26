@@ -21,8 +21,8 @@ class OptionsController < ApplicationController
   def destroy
     @option = Option.find(params[:id])
     @option.destroy
-
-    redirect_to topic_path(@interaction.topic)
+    flash[:notice] = "Réponse supprimée!"
+    redirect_to topic_path(@option.topic)
   end
 
   private

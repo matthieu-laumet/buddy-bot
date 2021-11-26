@@ -26,13 +26,9 @@ class TopicsController < ApplicationController
   def edit
   end
 
-  # def update
-  #   @topic.update(travel_params)
-  #   redirect_to topics_path
-  # end
-
   def destroy
     @topic.destroy
+    flash[:notice] = "Thème supprimé!"
     redirect_to topics_path
   end
 

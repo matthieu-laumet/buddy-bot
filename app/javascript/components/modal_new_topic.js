@@ -2,8 +2,8 @@ const actionModal = () => {
   const modalBtn = document.querySelector('.modal-btn');
   const modalBg = document.querySelector('.modal-bg');
   const modalClose = document.querySelector('.modal-close');
-  const modalCloseOption = document.querySelector('.modal-close-option');
 
+  const modalCloseOptions = document.querySelectorAll('.modal-close-option');
   const triggerBtnOptions = document.querySelectorAll('.btn-notification')
 
   if (triggerBtnOptions) {
@@ -15,12 +15,14 @@ const actionModal = () => {
     });
   }
 
-  if (modalCloseOption) {
-    triggerBtnOptions.forEach((triggerBtnOption) => {
+  if (modalCloseOptions) {
+    modalCloseOptions.forEach((modalCloseOption) => {
       modalCloseOption.addEventListener('click', (event) => {
-        const element = document.querySelector("." + triggerBtnOption.id);
-        element.classList.remove('bg-active');
-      })
+        triggerBtnOptions.forEach((triggerBtnOption) => {
+            const element = document.querySelector("." + triggerBtnOption.id);
+            element.classList.remove('bg-active');
+        });
+      });
     })
   }
 
