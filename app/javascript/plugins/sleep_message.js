@@ -7,17 +7,17 @@ const sleepMessage = () => {
   //   });
     // var i = 1;
 
-  function myLoop() {
-    const messages = document.querySelectorAll(".d-none")
-    messages.forEach((message) => {
-      // console.log('World')
-      setTimeout(function () {
-        console.log('hello');
-      }, 3000)
-    });
-  }
+  // function myLoop() {
+  //   const messages = document.querySelectorAll(".d-none")
+  //   messages.forEach((message) => {
+  //     // console.log('World')
+  //     setTimeout(function () {
+  //       console.log('hello');
+  //     }, 3000)
+  //   });
+  // }
 
-  myLoop();
+  // myLoop();
 
 }
 
