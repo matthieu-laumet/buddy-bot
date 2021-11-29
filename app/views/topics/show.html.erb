@@ -1,16 +1,22 @@
-<div class="container">
+ <div class="banner">
+    <% if @topic.photo.attached? %>
+      <div class="container-banner">
+        <%= cl_image_tag(@topic.photo.key) %>
+        <div class="degrade"></div>
+        <h1 class="title-topic-show"><%=@topic.title  %></h1>
+      </div>
+    <% else %>
+      <div class="container-banner">
+        <%= image_tag 'https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', crop: :fill %>
+        <div class="degrade"></div>
+        <div class="logo-buddy"></div>
+        <h1 class="title-topic-show"><%=@topic.title%></h1>
+      </div>
+    <% end %>
+ </div>
+
+<div class="container-show-topic">
     <div>
-         <% if @topic.photo.attached? %>
-          <div class="container-banner">
-            <%= cl_image_tag(@topic.photo.key, crop: :fill, class: "banner") %>
-            <h1><%=@topic.title  %></h1>
-          </div>
-        <% else %>
-          <div class="container-banner">
-            <%= image_tag 'https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', crop: :fill, class: "banner" %>
-            <h1><%=@topic.title%></h1>
-          </div>
-        <% end %>
       <div class="topics-components">
         <div class="interactions-form">
         <div>
@@ -92,21 +98,23 @@
                   <div>
                     <div class="options-theme-card">
                       <h5>Réponses enregistrées:</h5>
-                      <% if interaction.options.present? %>
-                        <% interaction.options.sort_by(&:position).each do |option| %>
-                        <div class="options-display">
-                          <div>
-                            <p><%= option.position %> - <%= option.title %></p>
+                      <div class="options-in-line">
+                        <% if interaction.options.present? %>
+                          <% interaction.options.sort_by(&:position).each do |option| %>
+                          <div class="options-display">
+                              <p><%= option.position %> - <%= option.title %></p>
+                              <%= link_to option_path(option),
+                                method: :delete, remote: true do %>
+                                <i class="fas fa-trash"></i>
+                              <% end %>
                           </div>
-                          <div>
-                            <%= link_to option_path(option),
-                              method: :delete, remote: true do %>
-                              <i class="fas fa-trash"></i>
-                            <% end %>
+                          <div class="reponse-direct">
+                            <i class="fas fa-long-arrow-alt-right mr-2"></i>
+                            <p><%= option.next_accroche %></p>
                           </div>
-                        </div>
+                          <% end %>
                         <% end %>
-                      <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>

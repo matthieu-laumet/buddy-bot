@@ -6,17 +6,31 @@
   grid-gap: 16px;
 }
 
+.container-topics{
+  margin: -60px 90px 20px 90px;
+  min-height: 55vh;
+  position: relative;
+  z-index: 2;
+
+  h1 {
+    justify-content: flex-start;
+    margin-left: 12px;
+    font-size: 32px;
+  }
+
+  .topic-title {
+    display: flex;
+  }
+}
+
+
+
 // .container-topics{
 //   display: flex;
 // }
 
 
-H1{
-  text-align: center;
-  margin: 20px;
-}
-
-
-.container-topics{
-  margin: 45px;
-}
+// H1{
+//   text-align: center;
+//   margin: 20px;
+// }

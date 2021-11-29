@@ -1,50 +1,77 @@
-.topics-components {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.banner {
+  height: 350px;
+  top: -14px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
 }
+
+.container-banner {
+  width: 100%;
+  height: 350px;
+
+
+  img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .degrade {
+    height: 350px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    background: linear-gradient(90deg,rgba(35,48,56,.9),transparent 50%);
+  }
+
+
+  .title-topic-show {
+    position: relative;
+    top: -230px;
+    margin-left: 100px;
+    align-items: center;
+    line-height: 60px;
+    width: 450px;
+    justify-content: flex-start;
+    font-size: 68px;
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    text-shadow: rgba(0, 0, 0, .6) 2px 2px 5px;
+  }
+}
+
+
+// .topics-components {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+// }
 
 .interactions-form {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
+  // display: flex;
+  // flex-direction: column;
+  width: 430px;
   margin-right: 40px;
-  padding-right: 40px;
-  border-right: 0.6px solid #a3a3a3;
-  flex-grow: 1;
+  margin-left: 20px;
+  // padding-right: 40px;
+  // border-right: 0.6px solid #a3a3a3;
+  // flex-grow: 1;
 }
 
-// .interactions-preview {
-  // padding-right: 40px;
-// }
+.interactions-preview {
+  width: 800px;
+  padding-left: 40px;
+  border-left: 2px solid rgb(210, 210, 210);
+}
 
 .topic-title {
   text-align: center;
   align-items: center;
   display: flex;
-
 }
 
-.banner{
-  height: 300px;
-  width: 85vw;
-  object-fit: cover;
-}
 
-.container-banner{
-  position:relative;
-  margin-bottom: 20px;
-
-  .banner{
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
-  }
-  h1 {
-    position: absolute;
-    top: 90px;
-    background-color: white;
-    padding: 20px;
-  }
-}
 
 h3{
   margin-top: 20px;
@@ -55,9 +82,10 @@ h6{
   margin-bottom: 20px;
 }
 
-.container{
-  margin-bottom: 30px;
-  margin-top: 10px;
+.container-show-topic {
+  margin: 20px 100px;
+  // margin-bottom: 30px;
+  // margin-top: 10px;
 }
 
 .btn-danger{
@@ -66,7 +94,7 @@ h6{
 
 
 .content-theme-card{
-  background-color: white;
+  // background-color: white;
   padding: 10px;
     .infos-border{
       margin-bottom: 5px;
@@ -74,13 +102,17 @@ h6{
 }
 
 .options-theme-card{
-  background-color: white;
+  // background-color: white;
   padding: 10px;
-  width: 57vh;
+  // width: 57vh;
     .infos-border{
       margin-bottom: 5px;
     }
 }
+
+// .options-in-line {
+//   display: flex;
+// }
 
 .infos-border{
   margin-bottom: 3px;

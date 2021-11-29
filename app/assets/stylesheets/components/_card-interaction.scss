@@ -1,18 +1,18 @@
 .topics-components {
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
 }
 
-.interactions-form {
-  width: 300px;
-}
+// .interactions-form {
+  // width: 300px;
+// }
 
-.interactions-preview {
-  width: 500px;
-}
+// .interactions-preview {
+//   width: 500px;
+// }
 
 .card-interaction {
-  width: 500px;
+  width: 100%;
   // min-height: 120px;
   background: white !important;
   // box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -57,9 +57,9 @@
 }
 
 .card-interaction-infos {
-  width: 500px;
+  width: 100%;
   min-height: 120px;
-  background:#f9f9f9;
+  background:rgb(248, 248, 248);
   // box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border: 0.4px solid #e6e6e6;
   display: flex;
@@ -88,7 +88,7 @@
 }
 
 .card-toggle {
-  width: 500px;
+  width: 100%;
   height: 35px;
   background: white !important;
   // box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -173,6 +173,25 @@
 
 .options-display {
   display: flex;
+  width: 100%;
+  margin-right: 30px;
   flex-direction: row;
   justify-content: space-between;
+  // .fa-trash {
+  //   margin-left: 10px;
+  // }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.reponse-direct {
+  display: flex;
+  align-items: baseline;
+  margin-left: 10px;
+
+  p {
+    color: rgb(150, 150, 150);
+    margin-top: 0;
+  }
 }

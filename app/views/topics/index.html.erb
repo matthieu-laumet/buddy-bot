@@ -1,7 +1,18 @@
-<h1>Mes thèmes</h1>
-<div class="container-topics">
+<div class="banner-topic">
+  <div class="container-banner-topic text-left">
+    <div class="title"><h1 id="buddy">Buddy </h1><h1 id="bot">Bot</h1></div>
+    <h2>Le 1<sup>er</sup> ChatBot éducatif pour vos alumnis</h2>
+    <div class="inline"><p>Un sujet par jour, </p><p class="strong">EN 5 MINUTES</p></div>
+    <p>pour les amuser, les détentre et leur faire revoir les notions du jour</p>
+    <p class="focus">Allez viens, on en discute !</p>
+  </div>
+</div>
 
-  <button class="btn-new-topic btn btn-danger modal-btn">Créer un nouveau thème</button>
+<div class="container-topics">
+  <div class="topic-title">
+    <h1>Mes conversations</h1>
+    <button class="btn-new-topic btn btn-danger modal-btn ml-3">Créer un nouveau thème</button>
+  </div>
 
   <div class="modal-bg">
     <div class="modal">
@@ -34,7 +45,7 @@
           <div class="card-body-part">
             <div class="card-body">
             <% if topic.title.length > 20 %>
-              <h3 class="card-title m-0"><%= topic.title[0..15] + "..." %></h5>
+              <h3 class="card-title m-0"><%= topic.title[0..20] + "..." %></h5>
             <% else %>
               <h3 class="card-title m-0"><%= topic.title %></h5>
             <% end %>
