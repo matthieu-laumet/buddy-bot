@@ -1,0 +1,1115 @@
+<H1>Programmation</H1>
+
+<div class="event-schedule-area-two bg-color pad100">
+  <div class="container-topics">
+  <button class="btn btn-danger modal-btn">Programmer une conversation</button>
+    <div class="modal-bg">
+      <div class="modal">
+          <%= render 'form_prog', topic: @topic, batch: @batch, schedule: @schedule %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="nav custom-tab" id="myTab" role="tablist">
+          <li class="nav-item mr-0 d-none d-lg-block">
+          <%= link_to 'Janvier', schedules_path(month: "1") %>
+            <a class="nav-link active show" id="home-taThursday" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Janvier</a>
+          </li>
+          <li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="fevrier-tab" data-toggle="tab" href="#fevrier" role="tab" aria-controls="fevrier" aria-selected="false">Fevrier</a>
+          </li>
+          <li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="mars-tab" data-toggle="tab" href="#mars" role="tab" aria-controls="mars" aria-selected="false">Mars</a>
+          </li>
+          <li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="avril-tab" data-toggle="tab" href="#avril" role="tab" aria-controls="avril" aria-selected="false">Avril</a>
+          </li>
+          <li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="mai-tab" data-toggle="tab" href="#mai" role="tab" aria-controls="mai" aria-selected="false">Mai</a>
+          </li>
+          <li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="juin-tab" data-toggle="tab" href="#juin" role="tab" aria-controls="juin" aria-selected="false">Juin</a>
+          </li>
+          <li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="juillet-tab" data-toggle="tab" href="#juillet" role="tab" aria-controls="juillet" aria-selected="false">Juillet</a>
+          </li>
+          <li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="aout-tab" data-toggle="tab" href="#aout" role="tab" aria-controls="aout" aria-selected="false">Aout</a>
+          </li><li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="septembre-tab" data-toggle="tab" href="#septembre" role="tab" aria-controls="septembre" aria-selected="false">Septembre</a>
+          </li><li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="octobre-tab" data-toggle="tab" href="#octobre" role="tab" aria-controls="octobre" aria-selected="false">Octobre</a>
+          </li><li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="novembre-tab" data-toggle="tab" href="#novembre" role="tab" aria-controls="novembre" aria-selected="false">Novembre</a>
+          </li><li class="nav-item mr-0 d-none d-lg-block">
+            <a class="nav-link" id="decembre-tab" data-toggle="tab" href="#decembre" role="tab" aria-controls="decembre" aria-selected="false">Decembre</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade active show" id="home" role="tabpanel">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="fevrier" role="tabpanel" aria-labelledby="fevrier-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="mars" role="tabpanel" aria-labelledby="mars-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="avril" role="tabpanel" aria-labelledby="avril-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="mai" role="tabpanel" aria-labelledby="mai-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="juin" role="tabpanel" aria-labelledby="juin-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="juillet" role="tabpanel" aria-labelledby="juillet-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="aout" role="tabpanel" aria-labelledby="aout-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="septembre" role="tabpanel" aria-labelledby="septembre-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="octobre" role="tabpanel" aria-labelledby="octobre-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="novembre" role="tabpanel" aria-labelledby="novembre-tab">
+                <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="decembre" role="tabpanel" aria-labelledby="decembre-tab">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Date</th>
+                      <th scope="col"></th>
+                      <th scope="col">Conversation</th>
+                      <th scope="col">Batchs</th>
+                      <th class="text-center" scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="inner-box">
+                      <th scope="row">
+                        <div class="event-date">
+                          <span>16</span>
+                          <p>Novembar</p>
+                        </div>
+                      </th>
+                        <td>
+                          <div class="event-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="event-wrap">
+                            <div class="meta">
+                              <div class="categories">
+                                <span>Titre du topic</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="r-no">
+                            <span>Batch 733</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="primary-btn">
+                            <a class="btn btn-primary" href="#">Read More</a>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr class="inner-box">
+                        <th scope="row">
+                            <div class="event-date">
+                                <span>20</span>
+                                <p>Novembar</p>
+                            </div>
+                        </th>
+                        <td>
+                            <div class="event-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="event-wrap">
+                                <h3><a href="#">Toni Duggan</a></h3>
+                                <div class="meta">
+                                    <div class="organizers">
+                                        <a href="#">Aslan Lingker</a>
+                                    </div>
+                                    <div class="categories">
+                                        <a href="#">Inspire</a>
+                                    </div>
+                                    <div class="time">
+                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="r-no">
+                                <span>Room D3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="primary-btn">
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<% @schedules.each do |schedule| %>
+  <%= schedule.topic.title %>
+<% end %>
