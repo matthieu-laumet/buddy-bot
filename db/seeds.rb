@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 # Answer.destroy_all
 # Schedule.destroy_all
 # Option.destroy_all
@@ -44,19 +38,19 @@ puts 'Creating 1 user...'
   )
   user.save!
 
-  # student = User.new(
-  #   first_name: "Matthieu",
-  #   last_name: "Laumet",
-  #   batch: batch,
-  #   admin: false,
-  #   email: "matmat@buddy.fr",
-  #   password: "azerty"
-  # )
-  # student.save!
+  student = User.new(
+    first_name: "Matthieu",
+    last_name: "Laumet",
+    batch: batch,
+    admin: false,
+    email: "matmat@buddy.fr",
+    password: "azerty"
+  )
+  student.save!
 
-  # puts "Created #{student.first_name}"
-#-------------------------------------
-# puts 'Creating 1 topic...'
+  puts "Created #{student.first_name}"
+# #-------------------------------------
+#   puts 'Creating 1 topic...'
 #   topic = Topic.new(
 #     title: "Onionland",
 #     first_accroche: "Hello ! Je suis Captain Accroche ",
@@ -226,11 +220,11 @@ puts 'Creating 1 user...'
 #     )
 #     post_3.save!
 
-    # options = []
+#     options = []
 
-    # interaction.options.each do |option|
-    #   options << option.title
-    # end
+#     interaction.options.each do |option|
+#       options << option.title
+#     end
 
 #     post_4 = Post.new(
 #     user: student,

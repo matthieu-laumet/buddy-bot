@@ -1,15 +1,16 @@
 class Schedule < ApplicationRecord
   belongs_to :batch
-  belongs_to :topic
+  belongs_to :topic, dependent: :destroy
+  has_many :interactions, through: :topic
 
   def self.sending
     # itérer sur ces schedules
     self.all.each do |schedule|
       # passer posted a true
-      schedule.posted = true
+      # schedule.posted = true
       schedule.save
       # trouver le 1ere interaction
-      interaction = schedule.topic.interactions.find_by(position: 1)
+      interaction = schedule.interactions.find_by(position: 1)
       # trouver les students
       students = schedule.batch.users
       # itérer sur le tableau de students
