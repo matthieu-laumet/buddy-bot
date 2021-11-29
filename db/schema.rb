@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_152308) do
+ActiveRecord::Schema.define(version: 2021_11_29_111707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,15 @@ ActiveRecord::Schema.define(version: 2021_11_25_152308) do
     t.boolean "posted", default: false
     t.index ["batch_id"], name: "index_schedules_on_batch_id"
     t.index ["topic_id"], name: "index_schedules_on_topic_id"
+  end
+
+  create_table "slots", force: :cascade do |t|
+    t.integer "batch_camp"
+    t.integer "topic_title"
+    t.datetime "day_of_week"
+    t.datetime "hour"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "topics", force: :cascade do |t|

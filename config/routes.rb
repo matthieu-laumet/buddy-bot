@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :topics do
+
     resources :interactions, except: [:index, :new, :edit, :update], shallow: true do
       resources :options, only: [:new, :create]
     end
-    resources :schedules
+
   end
 
+   resources :schedules, only: [:index, :destroy, :create]
   # resources :interactions, only: [:destroy] do
   #   resources :options, only: [:new, :create]
   # end
