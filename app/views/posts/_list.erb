@@ -16,14 +16,25 @@
     </div>
   <% else %>
     <div class="<%= 'd-none' if post.active %>">
-      <div class="message d-flex justify-content-start text-left ml-2">
-        <%= cl_image_tag current_user.photo.key, width:"50px", height:"45px", class:"rounded img-user" %>
-        <div class="message-text ml-3 mt-1">
-          <h4><%= current_user.first_name %></h4>
-        <p id="option-<%= Answer.last.id %>"><%= Answer.last.option.title %></p>
-          <%#= raise %>
+      <% if current_user.photo.attached? %>
+        <div class="message d-flex justify-content-start text-left ml-2">
+          <%= cl_image_tag current_user.photo.key, width:"50px", height:"45px", class:"rounded img-user" %>
+          <div class="message-text ml-3 mt-1">
+            <h4><%= current_user.first_name %></h4>
+            <p id="option-<%= Answer.last.id %>"><%= Answer.last.option.title %></p>
+            <%#= raise %>
+          </div>
         </div>
-      </div>
+        <% else %>
+          <div class="message d-flex justify-content-start text-left ml-2">
+            <%= image_tag 'https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', width:"50px", height:"45px", class:"rounded img-user" %>
+            <div class="message-text ml-3 mt-1">
+              <h4><%= current_user.first_name %></h4>
+              <p id="option-<%= Answer.last.id %>"><%= Answer.last.option.title %></p>
+              <%#= raise %>
+            </div>
+          </div>
+      <% end %>
     </div>
   <% end %>
 <% end %>

@@ -35,8 +35,15 @@
   border-radius: 3px;
   display: flex;
 }
+
 .nav-link {
   font-weight: 400;
   color: white !important;
   opacity: 0,5
+}
+
+.navbar {
+  position: sticky;
+  top: 0px;
+  z-index: 3;
 }
