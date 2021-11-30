@@ -73,7 +73,7 @@ puts 'Creating 1 interaction...'
   interaction_2 = Interaction.new(
     content: "Vous avez certainement déjà entendu parler du 'dark web', cet ensemble de sites inaccessibles depuis le Web classique, et qui nourrissent beaucoup de fantasmes - en particulier celui d’un vaste bazar, réservé aux initiés, dangereux et malsain, quelque part entre la série Mr Robot, les réseaux mafieux et les trafiquants de drogue. Mais la réalité est assez éloignée de cette image négative véhiculée par de nombreux médias.",
     question: "On continue toujours ?",
-    html_content: "www.google.fr",
+    # html_content: "www.google.fr",
     position: 2,
     topic: topic
   )
@@ -83,7 +83,7 @@ puts 'Creating 1 interaction...'
    interaction_3 = Interaction.new(
     content: "Mais d’abord un petit point vocabulaire, pour éviter les confusions. Pour utiliser les bons termes, sachez qu’au coeur même d’Internet, existent plusieurs réseaux uniquement accessibles par des logiciels spécifiques : le “dark net”. Le contenu du Web qui se trouve sur ces réseaux - des sites volontairement “cachés” et difficiles à trouver - est appelé “dark web”. Ces services ne sont pas indexés par les moteurs de recherche : ils font aussi partie du “deep web”, la partie du Web qui englobe tous les sites dont il faut connaître l’adresse afin de s’y rendre - en gros, le Web qui existait avant Google, Lycos et Altavista.",
     question: "On continue toujours ?",
-    html_content: "www.google.fr",
+    # html_content: "www.google.fr",
     position: 3,
     topic: topic
   )
@@ -92,7 +92,7 @@ puts 'Creating 1 interaction...'
   interaction_4 = Interaction.new(
     content: "Ok très bien, on s'arrète là.",
     question: "Bonne nuit et à demain !",
-    html_content: "www.google.fr",
+    # html_content: "www.google.fr",
     position: 4,
     topic: topic
   )

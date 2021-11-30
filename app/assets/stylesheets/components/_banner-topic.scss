@@ -5,6 +5,7 @@
   position: relative;
   top: -15px;
   z-index: 1;
+  color: white;
 
   .container-banner-topic {
     padding-left: 135px;
@@ -13,12 +14,13 @@
 
   .title {
     display: flex;
-    color: white;
+    // color: white;
   }
 
   h2 {
     font-family: 'Rubik', sans-serif;
     margin-bottom: 20px;
+    // color: white;
   }
 
   p {
@@ -35,6 +37,7 @@
     border-radius: 2px;
     border: 1px #870014;
     background-color: white;
+    color: rgb(35,48,56);
     margin-left: 9px;
     transform: rotate(-1deg);
     box-shadow: #870014 3px 3px 5px;
