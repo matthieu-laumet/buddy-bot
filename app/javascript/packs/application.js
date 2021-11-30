@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'emoji-picker-element';
 
 // Internal imports, e.g:
 // import { btnDisable } from '../components/btns-option';
@@ -41,7 +42,10 @@ document.addEventListener('turbolinks:load', () => {
   showCard();
   updateEmail();
   updateName();
-  sleepMessage();
+  const messages = document.querySelectorAll(".d-none")
+  if (messages.length !== 0) {
+    sleepMessage();
+  }
 });
 
 import "controllers"

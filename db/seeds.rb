@@ -63,7 +63,7 @@ puts 'Creating 1 interaction...'
   interaction = Interaction.new(
     content: "Au programme, tout un univers à porté d'onion! Un espace encore trop méconnu..",
     question: "Tu veux en savoir plus ?",
-    html_content: "https://www.cnetfrance.fr/news/dark-web-comment-aller-sur-onion-land-et-ce-que-l-on-peut-y-trouver-39868394.htm",
+    # html_content: "https://www.cnetfrance.fr/news/dark-web-comment-aller-sur-onion-land-et-ce-que-l-on-peut-y-trouver-39868394.htm",
     position: 1,
     topic: topic
   )
