@@ -1,6 +1,9 @@
+
+
 .container-schedule{
+  min-height: 80.5vh;
   margin: -60px 90px 20px 90px;
-  min-height: 80vh;
+  padding-bottom: 80px;
 }
 
 #tab-month{
@@ -10,6 +13,29 @@
   }
 }
 
+.schedule-trash{
+  color: black;
+  text-shadow: rgb(80, 80, 80) 1px 1px 2px;
+}
+.schedule-trash:hover{
+  color: red;
+  text-shadow: rgb(80, 80, 80) 1px 1px 2px;
+}
+
+.schedule-eye{
+  color: black;
+  text-shadow: rgb(80, 80, 80) 1px 1px 2px;
+}
+.schedule-eye:hover{
+  color: red;
+  text-shadow: rgb(80, 80, 80) 1px 1px 2px;
+}
+
+
+.nav{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 
 .photo{
   width: 150px;
@@ -76,7 +102,6 @@ h1 {
 .custom-tab{
   background-color: #243038;
 }
-
 
 
 // .event-schedule-area-two ul.custom-tab {
