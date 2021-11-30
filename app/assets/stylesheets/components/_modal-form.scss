@@ -63,6 +63,17 @@
 
 .modal-container{
   width: 80%;
+  position: relative;
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+
+emoji-picker {
+  position: absolute;
+  top: 30px;
+  left: 470px;
 }
 
 // .modal-btn{

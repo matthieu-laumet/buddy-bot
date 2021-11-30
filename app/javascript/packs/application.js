@@ -41,7 +41,10 @@ document.addEventListener('turbolinks:load', () => {
   showCard();
   updateEmail();
   updateName();
-  sleepMessage();
+  const messages = document.querySelectorAll(".d-none")
+  if (messages.length !== 0) {
+    sleepMessage();
+  }
 });
 
 import "controllers"
