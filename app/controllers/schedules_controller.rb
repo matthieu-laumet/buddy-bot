@@ -36,6 +36,7 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
+
     @schedule.destroy
     flash[:notice] = "Programmation supprimé!"
     redirect_to schedules_path
@@ -48,7 +49,6 @@ class SchedulesController < ApplicationController
   end
 
   def schedule_params
-    params.require(:schedule).permit(:batch_id, :topic_id, :post_at)
+    params.require(:schedule).permit(:batch_id, :topic_id, :post_at, :photo)
   end
-
 end

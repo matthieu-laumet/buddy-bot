@@ -307,6 +307,7 @@ PLATFORMS
   x86_64-darwin-20
   x86_64-linux
 
+
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
   bootsnap (>= 1.4.2)
@@ -341,4 +342,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.32
+   2.2.29
