@@ -62,15 +62,6 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    async (1.30.1)
-      console (~> 1.10)
-      nio4r (~> 2.3)
-      timers (~> 4.1)
-    async-io (1.32.2)
-      async
-    async-websocket (0.8.0)
-      async-io
-      websocket-driver (~> 0.7.0)
     autoprefixer-rails (10.2.5.0)
       execjs (< 2.8.0)
     aws_cf_signer (0.1.3)
@@ -89,20 +80,12 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    celluloid (0.18.0)
-      timers (~> 4)
-    celluloid-io (0.17.3)
-      celluloid (>= 0.17.2)
-      nio4r (>= 1.1)
-      timers (>= 4.1.1)
     childprocess (4.1.0)
     cloudinary (1.16.1)
       aws_cf_signer
       rest-client
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
-    console (1.14.0)
-      fiber-local
     crass (1.0.6)
     devise (4.8.0)
       bcrypt (~> 3.0)
@@ -118,38 +101,14 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
-    faraday (1.8.0)
-      faraday-em_http (~> 1.0)
-      faraday-em_synchrony (~> 1.0)
-      faraday-excon (~> 1.1)
-      faraday-httpclient (~> 1.0.1)
-      faraday-net_http (~> 1.0)
-      faraday-net_http_persistent (~> 1.1)
-      faraday-patron (~> 1.0)
-      faraday-rack (~> 1.0)
-      multipart-post (>= 1.2, < 3)
-      ruby2_keywords (>= 0.0.4)
-    faraday-em_http (1.0.0)
-    faraday-em_synchrony (1.0.0)
-    faraday-excon (1.1.0)
-    faraday-httpclient (1.0.1)
-    faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.2.0)
-    faraday-patron (1.0.0)
-    faraday-rack (1.0.0)
-    faraday_middleware (1.2.0)
-      faraday (~> 1.0)
     ffi (1.15.4)
-    fiber-local (1.0.0)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
-    gli (2.20.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
-    hashie (5.0.0)
     http-accept (1.7.0)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
@@ -192,7 +151,6 @@ GEM
     mini_mime (1.1.2)
     minitest (5.14.4)
     msgpack (1.4.2)
-    multipart-post (2.1.1)
     nested_form (0.3.2)
     netrc (0.11.0)
     nio4r (2.5.8)
@@ -276,7 +234,6 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.5)
-    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -295,16 +252,6 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
-    slack-ruby-bot (0.16.1)
-      activesupport
-      hashie
-      slack-ruby-client (>= 0.14.0)
-    slack-ruby-client (0.17.0)
-      faraday (>= 1.0)
-      faraday_middleware
-      gli
-      hashie
-      websocket-driver
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -320,7 +267,6 @@ GEM
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    timers (4.3.3)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -361,12 +307,10 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  async-websocket (~> 0.8.0)
   autoprefixer-rails (= 10.2.5)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  celluloid-io (~> 0.17.3)
   cloudinary (~> 1.16.0)
   devise
   dotenv-rails
@@ -383,7 +327,6 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   simple_form
-  slack-ruby-bot (~> 0.16.1)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

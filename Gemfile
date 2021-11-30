@@ -37,9 +37,6 @@ gem 'rails_admin', '~> 2.0'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
-gem 'slack-ruby-bot', '~> 0.16.1'
-gem 'celluloid-io', '~> 0.17.3'
-gem 'async-websocket', '~> 0.8.0'
 
 
 group :development, :test do  gem 'pry-byebug'

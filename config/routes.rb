@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'users/profile'
+  post 'slack/interactive_endpoint', to: "slack/commands#interactive_endpoint"
   devise_for :users
   root to: 'pages#home'
 
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
 
   end
 
-   resources :schedules, only: [:index, :destroy, :create]
+  resources :schedules, only: [:index, :destroy, :create]
   # resources :interactions, only: [:destroy] do
   #   resources :options, only: [:new, :create]
   # end
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   resources :options, only: [] do
     resources :answers, only: [:show, :new, :create]
   end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
