@@ -1,7 +1,9 @@
 class Schedule < ApplicationRecord
   belongs_to :batch
-  belongs_to :topic, dependent: :destroy
+  belongs_to :topic
   has_many :interactions, through: :topic
+  has_one_attached :photo
+
 
   def self.sending
     # itérer sur ces schedules

@@ -48,7 +48,7 @@
                   <div class="card-interaction-description">
                     <div class="card-interaction-contents">
                       <div class="card-interaction-position">
-                        <h2>Contenu n°<%= interaction.position %></h2>
+                        <h2>Interaction n°<%= interaction.position %></h2>
                       </div>
                     </div>
                     <div class="card-interaction-notifications">
@@ -81,25 +81,25 @@
                 <div class="card-interaction-infos hidden card-target-<%=interaction.id%>">
                   <div class="content-theme-card">
                     <div class="infos-border">
-                      <h5>Contenus enregistrés:</h5>
-                      <p>Contenu: </p>
-                      <span><%= interaction.content %></span>
+                      <%#= <h5>Contenus enregistrés:</h5> %>
+                      <h5>Contenu: </h5>
+                      <p><%= interaction.content %></p>
                     </div>
                     <div class="infos-border">
-                      <p>Question: </p>
-                      <span><%= interaction.question %></span>
+                      <h5>Média: </h5>
+                      <p><%= interaction.html_content %></p>
                     </div>
                     <div class="infos-border">
-                      <p>HTML content: </p>
-                      <span><%= interaction.html_content %></span>
+                      <h5>Question: </h5>
+                      <p><%= interaction.question %></p>
                     </div>
                   </div>
-                  <br>
+
                   <div>
+                    <% if interaction.options.present? %>
                     <div class="options-theme-card">
                       <h5>Réponses enregistrées:</h5>
                       <div class="options-in-line">
-                        <% if interaction.options.present? %>
                           <% interaction.options.sort_by(&:position).each do |option| %>
                           <div class="options-display">
                               <p><%= option.position %> - <%= option.title %></p>
