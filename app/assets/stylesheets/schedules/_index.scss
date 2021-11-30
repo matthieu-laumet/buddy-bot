@@ -86,10 +86,12 @@ h1 {
   margin-bottom: 40px;
 }
 
-.nav-item a{
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
+.custom-tab{
+  .nav-item a{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+  }
 }
 
 .nav-item a:active{
@@ -101,6 +103,18 @@ h1 {
 
 .custom-tab{
   background-color: #243038;
+}
+
+.schedule-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  border: rgb(215, 215, 215) solid 1px;
+  border-bottom: #e33636 solid 6px;
+  box-shadow: rgb(200, 200, 200) 2px 2px 8px;
 }
 
 
