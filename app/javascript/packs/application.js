@@ -24,7 +24,6 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import 'emoji-picker-element';
 
 // Internal imports, e.g:
 // import { btnDisable } from '../components/btns-option';
