@@ -1,15 +1,17 @@
-class AnswersController < ApplicationController
+require 'json'
 
-  def show
-    @answer = Answer.find(params[:answer_id])
-  end
+class Slack::CommandsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  skip_before_action :authenticate_user!, only: [:interactive_endpoint]
 
-  def new
-    @answer = Answer.new
-  end
+  def interactive_endpoint
+    responses = params[:payload]
+    json_responses = JSON.parse(responses.gsub('=>', ':'))
+    user_response = JSON.parse(json_responses["actions"][0]["value"])
 
-  def create
-    # @option = Option.find(params[:option_id])
+    @option = Option.find(user_response["option_id"])
+    current_user = User.find(user_response["user_id"])
+
     @answer = Answer.new(option_id: @option.id, user_id: current_user.id)
     @last_interaction = @option.interaction
     @next_interaction = @last_interaction.topic.interactions.where(position: @last_interaction.position + 1).first
@@ -25,12 +27,7 @@ class AnswersController < ApplicationController
       Post.create!(user: current_user, interaction: @next_interaction, buddy: true, form: true, content: "")
     end
 
-    redirect_to posts_path(anchor: "option-#{Answer.last.id}")
+    head :no_content
   end
 
-  private
-
-  def answer_params
-    params.require(:answer).permit(:content)
-  end
 end
