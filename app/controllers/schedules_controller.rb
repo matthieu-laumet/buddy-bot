@@ -48,7 +48,7 @@ class SchedulesController < ApplicationController
   end
 
   def schedule_params
-    params.require(:schedule).permit(:batch_id, :topic_id, :post_at)
+    params.require(:schedule).permit(:batch_id, :topic_id, :post_at, :photo)
   end
 
 end
