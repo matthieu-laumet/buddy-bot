@@ -55,8 +55,10 @@
 
 .topic-title {
   text-align: center;
-  align-items: baseline;
+  align-items: flex-start;
+
   display: flex;
+  margin-bottom: 25px;
 }
 
 h3{

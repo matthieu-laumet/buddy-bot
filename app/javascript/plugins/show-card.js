@@ -1,4 +1,3 @@
-
 const showCard = (item) => {
 
   const triggerBtns = document.querySelectorAll(".card-toggle");
