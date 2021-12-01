@@ -27,7 +27,8 @@
   height: 80%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  padding-left: 60px;
+  align-items: flex-start;
   flex-direction: column;
 
 }
@@ -47,8 +48,8 @@
 
 .modal-close{
   position: absolute;
-  top: 22px;
-  right: 20px;
+  top: 0;
+  right: 0;
   font-weight: bold;
   cursor: pointer;
   font-size: 24px;
@@ -64,7 +65,7 @@
 }
 
 .modal-container{
-  width: 80%;
+  width: 57%;
   position: relative;
 
   h1 {
@@ -72,11 +73,12 @@
   }
 }
 
-emoji-picker {
-  position: absolute;
-  top: 30px;
-  left: 470px;
-}
+  emoji-picker {
+    position: absolute;
+    top: 30px;
+    left: 685px;
+    z-index: 10;
+  }
 
 // .modal-btn{
 //   position: absolute;

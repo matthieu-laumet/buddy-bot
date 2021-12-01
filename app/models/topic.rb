@@ -6,4 +6,15 @@ class Topic < ApplicationRecord
 
   validates :title, presence: true
   validates :first_accroche, presence: true
+
+  include PgSearch::Model
+
+  pg_search_scope :global_search,
+    associated_against: {
+      interactions: [ :content, :question ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
