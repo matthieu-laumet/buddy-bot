@@ -36,7 +36,6 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
-
     @schedule.destroy
     flash[:notice] = "Programmation supprimé!"
     redirect_to schedules_path

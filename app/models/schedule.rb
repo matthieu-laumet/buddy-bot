@@ -1,9 +1,7 @@
 class Schedule < ApplicationRecord
   belongs_to :batch
-  belongs_to :topic
+  belongs_to :topic #, dependent: :destroy
   has_many :interactions, through: :topic
-  has_one_attached :photo
-
 
   def self.sending
     # itérer sur ces schedules
@@ -16,8 +14,7 @@ class Schedule < ApplicationRecord
       # trouver les students
       students = schedule.batch.users
       # itérer sur le tableau de students
-      students.each do |student|
-
+      students.where.not(slack_token: nil).each do |student|
         unless interaction.content.blank?
           Post.create(
             user: student,
@@ -65,7 +62,6 @@ class Schedule < ApplicationRecord
             content: interaction.options
           )
         end
-
       end
     end
   end
