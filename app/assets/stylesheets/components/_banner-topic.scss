@@ -9,8 +9,9 @@
   color: white;
 
   .container-banner-topic {
-    padding-left: 135px;
-    padding-top: 95px;
+    padding-left: 90px;
+    // padding-top: 60px;
+    // width: 54%;
   }
 
   .title {
@@ -72,7 +73,21 @@
 
 
 @media(max-width: 1600px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  .banner-topic {
+    height: 482px;
+  }
+}
+
+@media(max-width: 1600px) {
+  .container-banner-topic {
+    padding-top: 60px;
+    width: 54%;
+  }
+}
+
+@media(max-width: 1300px) {
+  .container-banner-topic {
+    padding-top: 25px;
+    width: 45%;
   }
 }
