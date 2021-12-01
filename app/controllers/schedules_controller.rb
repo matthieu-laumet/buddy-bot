@@ -8,15 +8,12 @@ class SchedulesController < ApplicationController
     #   #le mois en cours
     #   # @schedules = Schedule.where(date.today.month)
     # end
-
-
-    params[:month].present? ? month = params[:month] : month = Date.today.month
+    params[:month].present? ? @month = params[:month].to_i : @month = Date.today.month
     filtered_schedules = []
     Schedule.find_each do |schedule|
-      filtered_schedules << schedule if !schedule.post_at.nil? && schedule.post_at.month.to_i == month.to_i
+      filtered_schedules << schedule if !schedule.post_at.nil? && schedule.post_at.month.to_i == @month
     end
     @schedules = filtered_schedules
-
     @schedule = Schedule.new
     # @batch = Batch.find(params[:batch_id])
     #@topic = Topic.find(params[:topic_id])
@@ -36,7 +33,6 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
-
     @schedule.destroy
     flash[:notice] = "Programmation supprimé!"
     redirect_to schedules_path

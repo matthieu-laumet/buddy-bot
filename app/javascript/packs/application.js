@@ -34,6 +34,7 @@ import { updateName } from '../components/change_name_user.js';
 import { sleepMessage } from '../plugins/sleep_message';
 
 
+
 document.addEventListener('turbolinks:load', () => {
   // btnDisable()
   // initSelect2();
