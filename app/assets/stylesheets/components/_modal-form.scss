@@ -46,6 +46,7 @@
   align-items: center;
 }
 
+
 .modal-close{
   position: absolute;
   top: 0;
@@ -72,6 +73,26 @@
     margin-bottom: 40px;
   }
 }
+
+.modal-schedule{
+  position: relative;
+  font-family: 'Montserra', sans-serif;
+  background-color: white;
+  width: 40%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+  emoji-picker {
+    position: absolute;
+    top: 30px;
+    left: 685px;
+    z-index: 10;
+  }
 
 // .modal-btn{
 //   position: absolute;
