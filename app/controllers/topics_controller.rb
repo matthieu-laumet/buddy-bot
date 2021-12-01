@@ -2,8 +2,12 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def index
-    @topics = Topic.all
-    @topic = Topic.new
+    if params[:query].present?
+      @topic = Topic.global_search(params[:query])
+     else
+      @topics = Topic.all
+      @topic = Topic.new
+    end
   end
 
   def new

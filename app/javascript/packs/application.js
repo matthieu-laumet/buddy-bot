@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'emoji-picker-element';
 
 // Internal imports, e.g:
 // import { btnDisable } from '../components/btns-option';
@@ -32,6 +33,8 @@ import { showCard } from '../plugins/show-card';
 import { updateEmail } from '../components/change_email_user.js';
 import { updateName } from '../components/change_name_user.js';
 import { sleepMessage } from '../plugins/sleep_message';
+import { emojiPicker } from '../components/emoji-picker';
+
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -45,6 +48,7 @@ document.addEventListener('turbolinks:load', () => {
   if (messages.length !== 0) {
     sleepMessage();
   }
+  emojiPicker();
 });
 
 import "controllers"
