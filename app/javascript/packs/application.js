@@ -36,6 +36,7 @@ import { sleepMessage } from '../plugins/sleep_message';
 import { emojiPicker } from '../components/emoji-picker';
 
 
+
 document.addEventListener('turbolinks:load', () => {
   // btnDisable()
   // initSelect2();

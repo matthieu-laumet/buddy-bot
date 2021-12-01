@@ -1,48 +1,43 @@
 
   <H1>Programmation</H1>
+
 <div class="container-schedule">
-  <button class="btn btn-danger modal-btn">Programmer une conversation</button>
-  <div class="modal-bg">
-    <div class="modal">
-        <%= render 'form_prog', topic: @topic, batch: @batch, schedule: @schedule %>
-    </div>
-  </div>
     <div class="col-lg-12">
       <ul class="nav custom-tab", id="tab-month", role="tablist">
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 1 %>">
           <%= link_to 'Janvier', schedules_path(month: "1") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 2 %>">
           <%= link_to 'Fevrier', schedules_path(month: "2") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 3 %>">
           <%= link_to 'Mars', schedules_path(month: "3") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 4 %>">
           <%= link_to 'Avril', schedules_path(month: "4") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 5 %>">
           <%= link_to 'Mai', schedules_path(month: "5") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 6 %>">
           <%= link_to 'Juin', schedules_path(month: "6") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 7 %>">
           <%= link_to 'Juillet', schedules_path(month: "7") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 8 %>">
           <%= link_to 'Aout', schedules_path(month: "8") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 9 %>">
           <%= link_to 'Septembre', schedules_path(month: "9") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 10 %>">
           <%= link_to 'Octobre', schedules_path(month: "10") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 11 %>">
           <%= link_to 'Novembre', schedules_path(month: "11") %>
         </li>
-        <li class="nav-item mr-0 d-none d-lg-block">
+        <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 12 %>">
           <%= link_to 'Decembre', schedules_path(month: "12") %>
         </li>
       </ul>
@@ -54,7 +49,14 @@
               <th scope="col">Photo</th>
               <th scope="col">Conversation</th>
               <th scope="col">Batch</th>
-              <th class="text-center" scope="col"></th>
+              <th class="text-center" scope="col">
+                <button class="btn btn-danger modal-btn">Nouvelle programmation</button>
+                  <div class="modal-bg">
+                  <div class="modal-schedule">
+                  <%= render 'form_prog', topic: @topic, batch: @batch, schedule: @schedule %>
+                  </div>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
