@@ -8,3 +8,11 @@
   opacity: .2;
   z-index: 1;
 }
+
+emoji-picker {
+    position: absolute;
+    top: 30px;
+    // left: 685px;
+    right: -370px;
+    z-index: 10;
+  }
