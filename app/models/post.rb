@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   def send_to_slack
     slack_token='xoxb-2779267316933-2806182242208-jTgnpEj8woKrWIjVajapPnHk'
     headers = { "Authorization" => slack_token }
-    url_mcouronne = 'https://hooks.slack.com/services/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'
+    url_mcouronne = 'https://hooks.slack.com/services/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'
 
     if self.form
       options = []
