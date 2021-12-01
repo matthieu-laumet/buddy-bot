@@ -128,6 +128,7 @@ iframe {
   p {
     color: $text-gray;
     margin-bottom: 18px;
+    text-align: justify;
   }
 }
 
@@ -194,7 +195,8 @@ iframe {
 
 .options-display {
   display: flex;
-  width: 630px;
+  min-width: 600px;
+  width: 95%;
   margin-right: 30px;
   flex-direction: row;
   justify-content: space-between;
@@ -215,6 +217,10 @@ iframe {
   p {
     color: rgb(150, 150, 150);
     margin-top: 0;
-    width: 500px;
+    width: 88%;
   }
+}
+
+.width-réponse-enregistrée {
+  width: 100%;
 }

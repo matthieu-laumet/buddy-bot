@@ -6,8 +6,8 @@ class TopicsController < ApplicationController
       @topic = Topic.global_search(params[:query])
      else
       @topics = Topic.all
-      @topic = Topic.new
     end
+    @topic = Topic.new
   end
 
   def new

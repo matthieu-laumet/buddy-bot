@@ -4,15 +4,19 @@
   object-fit: cover;
   position: absolute;
   top: 30px;
-  right: -428px;
+  right: -462px;
   opacity: .2;
   z-index: 1;
 }
 
 emoji-picker {
     position: absolute;
-    top: 30px;
-    // left: 685px;
-    right: -370px;
+    padding-left: 100px;
+    margin-left: 50px;
+    padding-right: 50px;
+    margin-right: 30px;
+    // top: 30px;
+    // left: 572px;
+    // right: -300px;
     z-index: 10;
   }

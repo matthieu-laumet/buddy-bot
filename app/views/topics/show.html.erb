@@ -71,7 +71,7 @@
                           <%= link_to interaction_path(interaction),
                             method: :delete, remote: true,
                             data: { confirm: "Souhaitez-vous supprimer cette interaction ?" } do %>
-                            <i class="fas fa-trash"></i><br>Supprimer le contenu
+                            <i class="fas fa-trash"></i><br>Supprimer l'intéraction
                           <% end %>
                         </p>
                       </div>
@@ -95,7 +95,7 @@
                     </div>
                   </div>
 
-                  <div>
+                  <div class="width-réponse-enregistrée">
                     <% if interaction.options.present? %>
                     <div class="options-theme-card">
                       <h5>Réponses enregistrées:</h5>

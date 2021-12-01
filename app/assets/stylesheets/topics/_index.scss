@@ -2,13 +2,13 @@
 
 .cards{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  // grid-gap: 16px;
 }
 
 .container-topics{
-  margin: -82px 90px 20px 90px;
-  min-height: 55vh;
+  margin: -82px 120px 20px 120px;
+  min-height: 45vh;
   position: relative;
   z-index: 2;
 
@@ -24,14 +24,19 @@
   }
 }
 
+#Nouvelle-converse {
+  margin-bottom: 40px;
+}
 
 
-// .container-topics{
-//   display: flex;
-// }
+@media(max-width: 1600px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
 
-
-// H1{
-//   text-align: center;
-//   margin: 20px;
-// }
+@media(max-width: 1300px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

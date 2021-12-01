@@ -1,5 +1,6 @@
 .banner-topic {
-  height: 482px;
+  height: 640px;
+  background-position-x: right;
   background-image: asset-url("banner-topics.png");
   background-size: cover;
   position: relative;
@@ -9,7 +10,7 @@
 
   .container-banner-topic {
     padding-left: 135px;
-    padding-top: 65px;
+    padding-top: 95px;
   }
 
   .title {
@@ -67,4 +68,11 @@
 .inline {
   display: flex;
   align-items: flex-end;
+}
+
+
+@media(max-width: 1600px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
