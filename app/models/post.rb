@@ -11,8 +11,8 @@ class Post < ApplicationRecord
   def send_to_slack
     slack_token='xoxb-2779267316933-2806182242208-jTgnpEj8woKrWIjVajapPnHk'
     headers = { "Authorization" => slack_token }
-    url_slack = "https://hooks.slack.com/services/#{self.user.slack_token}"
-
+    #url_slack = "https://hooks.slack.com/services/#{self.user.slack_token}"
+    url_slack = "https://hooks.slack.com/services/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"
 
     if self.form
       options = []
@@ -66,17 +66,18 @@ class Post < ApplicationRecord
       response = RestClient.post url_slack, body, headers = { content_type: :json, accept: :json }
       #----------------------------block img------------------------------
     elsif self.interaction.photo.attached?
-      # img_asset = Cloudinary::Utils.cloudinary_url(self.interaction.photo.key)
-      img_asset = Cloudinary::Utils.cloudinary_url("sample.jpg")
+      #img_asset = Cloudinary::Utils.cloudinary_url(self.interaction.photo.key)
+      #img_asset = Cloudinary::Utils.cloudinary_url("sample.jpg")
       file_key = self.interaction.photo.key
       file_name = self.interaction.photo.filename
+      #img_asset = Cloudinary::Api.subfolders("development").resource(file_key)
       body = {
         "blocks": [
           {
             "type": "image",
             #"image_url": "https://res.cloudinary.com/dmtccsbsm/image/upload/v1636722389/sample.jpg",
 
-            # "image_url": "#{img_asset}",
+            #"image_url": "#{img_asset}",
             "alt_text": "inspiration"
           }
         ]
