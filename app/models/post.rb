@@ -11,12 +11,12 @@ class Post < ApplicationRecord
   def send_to_slack
     slack_token='xoxb-2779267316933-2806182242208-jTgnpEj8woKrWIjVajapPnHk'
     headers = { "Authorization" => slack_token }
-    #url_slack = "https://hooks.slack.com/services/#{self.user.slack_token}"
-    url_slack = "https://hooks.slack.com/services/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"
+    url_slack = "https://hooks.slack.com/services/#{self.user.slack_token}"
+    #url_slack = "https://hooks.slack.com/services/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"
 
-    if self.form
+    if self.media == "form"
       options = []
-      self.interaction.options.each do |option|
+      self.interaction.options.order(:position).each do |option|
         options << option.title
       end
       opt_0 = options[0]
@@ -36,7 +36,7 @@ class Post < ApplicationRecord
                           "text": "#{opt_0}"
                       },
                       "style": "danger",
-                      "value": "\{\"option_id\":\"#{self.interaction.options.first.id}\", \"user_id\":\"#{user.id}\"\}"
+                      "value": "\{\"option_id\":\"#{self.interaction.options.find_by(position: 1).id}\", \"user_id\":\"#{user.id}\"\}"
                   },
                   {
                     "type": "button",
@@ -45,7 +45,7 @@ class Post < ApplicationRecord
                         "text": "#{opt_1}"
                     },
                     "style": "danger",
-                    "value": "\{\"option_id\":\"#{self.interaction.options.second.id}\", \"user_id\":\"#{user.id}\"\}"
+                    "value": "\{\"option_id\":\"#{self.interaction.options.find_by(position: 2).id}\", \"user_id\":\"#{user.id}\"\}"
                   },
                   {
                     "type": "button",
@@ -54,7 +54,7 @@ class Post < ApplicationRecord
                         "text": "#{opt_2}"
                     },
                     "style": "danger",
-                    "value": "\{\"option_id\":\"#{self.interaction.options.third.id}\", \"user_id\":\"#{user.id}\"\}"
+                    "value": "\{\"option_id\":\"#{self.interaction.options.find_by(position: 3).id}\", \"user_id\":\"#{user.id}\"\}"
                   }
               ]
             },
@@ -65,26 +65,19 @@ class Post < ApplicationRecord
       }.to_json
       response = RestClient.post url_slack, body, headers = { content_type: :json, accept: :json }
       #----------------------------block img------------------------------
-    elsif self.interaction.photo.attached?
-      #img_asset = Cloudinary::Utils.cloudinary_url(self.interaction.photo.key)
-      #img_asset = Cloudinary::Utils.cloudinary_url("sample.jpg")
-      file_key = self.interaction.photo.key
-      file_name = self.interaction.photo.filename
-      #img_asset = Cloudinary::Api.subfolders("development").resource(file_key)
+    elsif self.media == "photo"
       body = {
         "blocks": [
           {
             "type": "image",
-            #"image_url": "https://res.cloudinary.com/dmtccsbsm/image/upload/v1636722389/sample.jpg",
-
-            #"image_url": "#{img_asset}",
+            "image_url": "#{ApplicationController.helpers.cl_image_path(self.interaction.photo.key)}",
             "alt_text": "inspiration"
           }
         ]
       }.to_json
       response = RestClient.post url_slack, body, headers = { content_type: :json, accept: :json }
       #----------------------------block text------------------------------
-    elsif !self.content.empty?
+    elsif self.media == "text"
       body = { text: self.content }.to_json
       response = RestClient.post url_slack, body, headers = { content_type: :json, accept: :json }
     end

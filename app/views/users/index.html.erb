@@ -12,11 +12,24 @@
           <div class="user-info">
             <p><%= user.email %></p>
           </div>
-          <div class="user-info">
-            <p>Slack Token</p>
-          </div>
-          <div class="user-info">
-            <p>Valider</p>
+          <div>
+            <%= simple_form_for(user) do |f| %>
+            <div class="">
+              <%= f.input :slack_token, label: 'Slack token' %>
+            </div>
+            <div class="">
+              <%= f.button :submit, 'Mettre à jour', class: 'btn btn-danger' %>
+            </div>
+            <div>
+              <p class="delete-content-btn">
+                <%= link_to user_path(user),
+                  method: :delete, remote: true,
+                  data: { confirm: "Souhaitez-vous supprimer ce compte ?" } do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              </p>
+            </div>
+            <% end %>
           </div>
         </div>
       <% end %>
