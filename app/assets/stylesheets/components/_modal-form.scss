@@ -35,6 +35,7 @@
   align-items: flex-start;
   flex-direction: column;
   z-index: 10;
+  border-radius: 6px;
 }
 
 
@@ -43,11 +44,12 @@
   font-family: 'Montserra', sans-serif;
   background-color: white;
   width: 35%;
-  height: 80%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-radius: 6px;
 }
 
 
@@ -62,8 +64,8 @@
 
 .modal-close-option {
   position: absolute;
-  top: -40px;
-  right: -20px;
+  top: -5%;
+  right: -15%;
   font-weight: bold;
   cursor: pointer;
   font-size: 24px;
@@ -71,6 +73,15 @@
 
 .modal-container{
   width: 57%;
+  position: relative;
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+
+.modal-container-option {
+  width: 70%;
   position: relative;
 
   h1 {
