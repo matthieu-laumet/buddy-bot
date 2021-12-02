@@ -10,7 +10,6 @@ $red-buddy: #e8362b;
   width: 100%;
   background: white !important;
   border: 0.6px solid #e6e6e6;
-  // border-bottom: 0.6px solid #c5c5c5;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -132,18 +131,11 @@ iframe {
   }
 }
 
-// .card-interaction h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
-
 .card-interaction p {
   font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  // margin-top: 20px;
 }
 
 .card-interaction-notifications {
@@ -176,7 +168,6 @@ iframe {
 
   .btn-notification {
     background-color: transparent;
-    // margin-right: 100px;
     margin: 0 30px;
     width: 100px;
     opacity: 0.8;
@@ -200,9 +191,7 @@ iframe {
   margin-right: 30px;
   flex-direction: row;
   justify-content: space-between;
-  // .fa-trash {
-  //   margin-left: 10px;
-  // }
+
   p {
     margin-bottom: 0;
     color: $text-gray
@@ -217,7 +206,7 @@ iframe {
   p {
     color: rgb(150, 150, 150);
     margin-top: 0;
-    width: 88%;
+    width: 87%;
   }
 }
 

@@ -1,41 +1,44 @@
 <div class="modal-container">
-  <div class="">
-    <div class="">
+  <div class="input-for-emoji emoji-new-topic">
     <div>
-      <h1 id="Nouvelle-converse">Nouveau conversation</h1>
-    </div>
-      <%= simple_form_for(topic) do |f| %>
+      <div>
+        <h1 id="Nouvelle-converse">Nouvelle conversation</h1>
+      </div>
+        <%= simple_form_for(topic) do |f| %>
 
-        <%-# ----------- Location form ----------- -%>
-        <div>
-          <div class="">
-            <%= f.input :title, label: 'Titre', placeholder: 'Titre de mon article' %>
+          <%-# ----------- Location form ----------- -%>
+          <div>
+            <div class="">
+              <%= f.input :title, label: 'Titre', placeholder: 'Titre de mon article' %>
+            </div>
           </div>
-        </div>
-        <div class="">
-          <%# if @interaction.photo.attached? %>
-            <%#= cl_image_tag @interaction.photo.key, class: "", height: 100, width: 100, crop: :fill %>
-          <% #else %>
-            <%#= image_tag("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGF0YXx8fHx8fDE2Mzc2Njc0NDU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080", class: "") %>
-          <% #end %>
-          <%= f.input :photo, as: :file, class:"btn btn-light" %>
-        </div>
-        <%-# ----------- Date form ----------- -%>
-        <div class="">
-          <%= f.input :first_accroche, label: "Accroche" %>
-        </div>
-        <%-# ----------- Passenger form ----------- -%>
-        <div class="">
-          <%= f.input :description, label: "Description" %>
-        </div>
-        <div class="">
-        <%= f.button :submit, 'Créer!', class: 'btn btn-danger' %>
-      <% end %>
-        </div>
-        <div>
-          <span class="modal-close"><i class="fas fa-times"></i></span>
-        </div>
-      <%= image_tag 'logo-Jam-bot_N&B.png', class:"logo-placeholder" %>
-    </div>
+          <div class="">
+            <%# if @interaction.photo.attached? %>
+              <%#= cl_image_tag @interaction.photo.key, class: "", height: 100, width: 100, crop: :fill %>
+            <% #else %>
+              <%#= image_tag("https://images.unsplash.com/photo-1537498425277-c283d32ef9db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGF0YXx8fHx8fDE2Mzc2Njc0NDU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080", class: "") %>
+            <% #end %>
+            <%= f.input :photo, as: :file, class:"btn btn-light" %>
+          </div>
+          <%-# ----------- Date form ----------- -%>
+          <div class="">
+            <%= f.input :first_accroche, label: "Accroche", class:"New-topic" %>
+          </div>
+          <%-# ----------- Passenger form ----------- -%>
+          <div class="">
+            <%= f.input :description, label: "Description", class:"New-topic" %>
+          </div>
+          <div class="">
+          <%= f.button :submit, 'Créer !', class: 'btn btn-danger' %>
+        <% end %>
+          </div>
+          <div>
+            <span class="modal-close"><i class="fas fa-times"></i></span>
+          </div>
+        <%#= image_tag 'logo-Jam-bot_N&B.png', class:"logo-placeholder" %>
+      </div>
   </div>
+
+
+
 </div>

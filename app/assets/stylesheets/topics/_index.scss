@@ -26,6 +26,7 @@
 
 #Nouvelle-converse {
   margin-bottom: 40px;
+  margin-left: 0;
 }
 
 
@@ -38,5 +39,11 @@
 @media(max-width: 1300px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 500px) {
+  .container-topics {
+    min-height: 99vh;
   }
 }
