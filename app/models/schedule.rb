@@ -15,58 +15,7 @@ class Schedule < ApplicationRecord
       students = schedule.batch.users
       # itérer sur le tableau de students
       students.where.not(slack_token: nil).each do |student|
-        if !interaction.content.blank?
-          Post.create(
-            media: "text",
-            user: student,
-            buddy: true,
-            form: false,
-            interaction: interaction,
-            content: interaction.content
-          )
-        end
-
-        if interaction.photo.attached?
-          Post.create(
-            media: "photo",
-            user: student,
-            buddy: true,
-            form: false,
-            interaction: interaction,
-            content: interaction.photo.key
-          )
-        end
-
-        if !interaction.html_content.blank?
-          Post.create(
-            media: "text",
-            user: student,
-            buddy: true,
-            form: false,
-            interaction: interaction,
-            content: interaction.html_content
-          )
-        end
-
-        if !interaction.question.blank? || !interaction.options.blank?
-          Post.create(
-            media: "text",
-            user: student,
-            buddy: true,
-            form: false,
-            interaction: interaction,
-            content: interaction.question
-          )
-
-          Post.create(
-            media: "form",
-            user: student,
-            buddy: true,
-            form: true,
-            interaction: interaction,
-            content: interaction.options
-          )
-        end
+        interaction.create_post_for(student)
       end
     end
   end
