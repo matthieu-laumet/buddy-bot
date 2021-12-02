@@ -17,6 +17,9 @@ class UsersController < ApplicationController
   # end
 
   def update
+    @user.update(article_params)
+
+    redirect_to users_path
   end
 
   def destroy

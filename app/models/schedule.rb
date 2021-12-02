@@ -16,7 +16,6 @@ class Schedule < ApplicationRecord
       # itérer sur le tableau de students
       students.where.not(slack_token: nil).each do |student|
         if !interaction.content.blank?
-          puts "coco1"
           Post.create(
             media: "text",
             user: student,
@@ -28,7 +27,6 @@ class Schedule < ApplicationRecord
         end
 
         if interaction.photo.attached?
-          puts "coco2"
           Post.create(
             media: "photo",
             user: student,
@@ -40,7 +38,6 @@ class Schedule < ApplicationRecord
         end
 
         if !interaction.html_content.blank?
-          puts "coco3"
           Post.create(
             media: "text",
             user: student,
@@ -51,8 +48,7 @@ class Schedule < ApplicationRecord
           )
         end
 
-        if !interaction.question.blank?
-          puts "coco4"
+        if !interaction.question.blank? || !interaction.options.blank?
           Post.create(
             media: "text",
             user: student,
