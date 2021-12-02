@@ -3,10 +3,6 @@
 
   emoji-picker {
     position: absolute;
-    // padding-left: 100px;
-    // margin-left: 50px;
-    // padding-right: 50px;
-    // margin-right: 30px;
     right: -68%;
     top: 15%;
     z-index: 10;
@@ -19,12 +15,19 @@
 
   emoji-picker {
     position: absolute;
-    // padding-left: 100px;
-    // margin-left: 50px;
-    // padding-right: 50px;
-    // margin-right: 30px;
     right: -105%;
     top: 15%;
+    z-index: 10;
+  }
+}
+
+.emoji-new-interaction {
+  position: relative;
+
+  emoji-picker {
+    position: absolute;
+    right: -85%;
+    top: -3%;
     z-index: 10;
   }
 }

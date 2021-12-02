@@ -80,20 +80,20 @@
                 </div>
                 <div class="card-interaction-infos hidden card-target-<%=interaction.id%>">
                   <div class="content-theme-card">
-                    <% if interaction.content %>
+                    <% unless interaction.content.empty? %>
                       <div class="infos-border">
                         <%#= <h5>Contenus enregistrés:</h5> %>
                         <h5>Contenu: </h5>
                         <p><%= interaction.content %></p>
                       </div>
                     <% end %>
-                    <% if interaction.html_content %>
+                    <% if interaction.html_content.present? %>
                       <div class="infos-border">
                         <h5>Média: </h5>
                         <p><%= interaction.html_content %></p>
                       </div>
                     <% end %>
-                    <% if interaction.question %>
+                    <% unless interaction.question.empty? %>
                       <div class="infos-border">
                         <h5>Question: </h5>
                         <p><%= interaction.question %></p>
@@ -104,11 +104,11 @@
                   <div class="width-réponse-enregistrée">
                     <% if interaction.options.present? %>
                     <div class="options-theme-card">
-                      <h5>Réponses enregistrées:</h5>
+                      <h5 id="rep-enregistre">Réponses enregistrées:</h5>
                       <div class="options-in-line">
                           <% interaction.options.sort_by(&:position).each do |option| %>
                           <div class="options-display">
-                              <p><%= option.position %> - <%= option.title %></p>
+                              <p id="option-btn"><%= option.position %> - <%= option.title %></p>
                               <%= link_to option_path(option),
                                 method: :delete, remote: true do %>
                                 <i class="fas fa-trash"></i>
