@@ -80,19 +80,25 @@
                 </div>
                 <div class="card-interaction-infos hidden card-target-<%=interaction.id%>">
                   <div class="content-theme-card">
-                    <div class="infos-border">
-                      <%#= <h5>Contenus enregistrés:</h5> %>
-                      <h5>Contenu: </h5>
-                      <p><%= interaction.content %></p>
-                    </div>
-                    <div class="infos-border">
-                      <h5>Média: </h5>
-                      <p><%= interaction.html_content %></p>
-                    </div>
-                    <div class="infos-border">
-                      <h5>Question: </h5>
-                      <p><%= interaction.question %></p>
-                    </div>
+                    <% if interaction.content %>
+                      <div class="infos-border">
+                        <%#= <h5>Contenus enregistrés:</h5> %>
+                        <h5>Contenu: </h5>
+                        <p><%= interaction.content %></p>
+                      </div>
+                    <% end %>
+                    <% if interaction.html_content %>
+                      <div class="infos-border">
+                        <h5>Média: </h5>
+                        <p><%= interaction.html_content %></p>
+                      </div>
+                    <% end %>
+                    <% if interaction.question %>
+                      <div class="infos-border">
+                        <h5>Question: </h5>
+                        <p><%= interaction.question %></p>
+                      </div>
+                    <% end %>
                   </div>
 
                   <div class="width-réponse-enregistrée">

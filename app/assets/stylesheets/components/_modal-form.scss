@@ -11,7 +11,7 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, Opacity 0.5s;
-  z-index: 999;
+  z-index: 11;
 }
 
 .bg-active{
@@ -23,6 +23,10 @@
   position: relative;
   font-family: 'Montserra', sans-serif;
   background-color: white;
+  background-image: asset-url('logo-Jam-bot_N&B.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 400px;
   width: 70%;
   height: 80%;
   display: flex;
@@ -30,7 +34,7 @@
   padding-left: 60px;
   align-items: flex-start;
   flex-direction: column;
-
+  z-index: 10;
 }
 
 
@@ -50,7 +54,7 @@
 .modal-close{
   position: absolute;
   top: 0;
-  right: 0;
+  right: -67%;
   font-weight: bold;
   cursor: pointer;
   font-size: 24px;
@@ -87,12 +91,12 @@
 }
 
 
-  emoji-picker {
-    position: absolute;
-    top: 30px;
-    left: 685px;
-    z-index: 10;
-  }
+  // emoji-picker {
+  //   position: absolute;
+  //   top: 30px;
+  //   left: 685px;
+  //   z-index: 10;
+  // }
 
 // .modal-btn{
 //   position: absolute;
