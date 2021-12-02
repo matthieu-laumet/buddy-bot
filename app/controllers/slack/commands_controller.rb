@@ -18,13 +18,14 @@ class Slack::CommandsController < ApplicationController
     @answer.save!
     #post affiche la reponse de user (buddy = false)
     Post.all.where(user: current_user).update(active: false)
-    Post.create!(user: current_user, interaction: @last_interaction, buddy: false, content: @option.title, form: false)
+    Post.create!(user: current_user, interaction: @last_interaction, buddy: false, media: "text", content: @option.title, form: false)
 
     if @next_interaction
-      Post.create!(user: current_user, interaction: @next_interaction, buddy: true, form: false, content: @option.next_accroche)
-      Post.create!(user: current_user, interaction: @next_interaction, buddy: true, form: false, content: @next_interaction.content)
-      Post.create!(user: current_user, interaction: @next_interaction, buddy: true, form: false, content: @next_interaction.question)
-      Post.create!(user: current_user, interaction: @next_interaction, buddy: true, form: true, content: "")
+      Post.create!(user: current_user, interaction: @next_interaction, buddy: true, media: "text", form: false, content: @option.next_accroche)
+      # Post.create!(user: current_user, interaction: @next_interaction, buddy: true, form: false, content: @next_interaction.content)
+      # Post.create!(user: current_user, interaction: @next_interaction, buddy: true, form: false, content: @next_interaction.question)
+      # Post.create!(user: current_user, interaction: @next_interaction, buddy: true, form: true, content: "")
+      @next_interaction.create_post_for(current_user)
     end
 
     head :no_content

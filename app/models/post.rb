@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   after_create :send_to_slack
 
   def send_to_slack
-    slack_token='xoxb-2779267316933-2806182242208-jTgnpEj8woKrWIjVajapPnHk'
+    slack_token = 'xoxb-2779267316933-2806182242208-jTgnpEj8woKrWIjVajapPnHk'
     headers = { "Authorization" => slack_token }
     url_slack = "https://hooks.slack.com/services/#{self.user.slack_token}"
     #url_slack = "https://hooks.slack.com/services/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"
@@ -19,10 +19,11 @@ class Post < ApplicationRecord
       self.interaction.options.order(:position).each do |option|
         options << option.title
       end
+
+      #----------------------------block buttons------------------------------
       opt_0 = options[0]
       opt_1 = options[1]
       opt_2 = options[2]
-
       body = {
         "blocks": [
             {
@@ -64,19 +65,21 @@ class Post < ApplicationRecord
         ]
       }.to_json
       response = RestClient.post url_slack, body, headers = { content_type: :json, accept: :json }
-      #----------------------------block img------------------------------
+
+    #----------------------------block img------------------------------
     elsif self.media == "photo"
       body = {
         "blocks": [
           {
             "type": "image",
             "image_url": "#{ApplicationController.helpers.cl_image_path(self.interaction.photo.key)}",
-            "alt_text": "inspiration"
+            "alt_text": "photo"
           }
         ]
       }.to_json
       response = RestClient.post url_slack, body, headers = { content_type: :json, accept: :json }
-      #----------------------------block text------------------------------
+
+    #----------------------------block text------------------------------
     elsif self.media == "text"
       body = { text: self.content }.to_json
       response = RestClient.post url_slack, body, headers = { content_type: :json, accept: :json }

@@ -4,5 +4,5 @@ task :first_hook => :environment do
     #Schedule.create(batch: Batch.first, topic: Topic.first, post_at: DateTime.now)
     schedules = Schedule.where(id: Schedule.last.id) #where(posted: false)
     schedules.sending
-  puts "done."
+  puts "done!"
 end
