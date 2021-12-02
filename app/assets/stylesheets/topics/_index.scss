@@ -2,12 +2,12 @@
 
 .cards{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  // grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 24px;
 }
 
 .container-topics{
-  margin: -82px 120px 20px 120px;
+  margin: -82px 90px 40px 90px;
   min-height: 45vh;
   position: relative;
   z-index: 2;
