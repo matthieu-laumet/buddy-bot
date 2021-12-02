@@ -1,20 +1,18 @@
-
-  <H1>Programmation</H1>
-
 <div class="container-schedule">
     <div class="col-lg-12">
       <ul class="nav custom-tab", id="tab-month", role="tablist">
+      <H1>Programmation</H1>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 1 %>">
-          <%= link_to 'Janvier', schedules_path(month: "1") %>
+          <%= link_to 'Jan.', schedules_path(month: "1") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 2 %>">
-          <%= link_to 'Fevrier', schedules_path(month: "2") %>
+          <%= link_to 'Fév.', schedules_path(month: "2") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 3 %>">
           <%= link_to 'Mars', schedules_path(month: "3") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 4 %>">
-          <%= link_to 'Avril', schedules_path(month: "4") %>
+          <%= link_to 'Avr.', schedules_path(month: "4") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 5 %>">
           <%= link_to 'Mai', schedules_path(month: "5") %>
@@ -23,22 +21,22 @@
           <%= link_to 'Juin', schedules_path(month: "6") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 7 %>">
-          <%= link_to 'Juillet', schedules_path(month: "7") %>
+          <%= link_to 'Juil', schedules_path(month: "7") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 8 %>">
-          <%= link_to 'Aout', schedules_path(month: "8") %>
+          <%= link_to 'Août', schedules_path(month: "8") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 9 %>">
-          <%= link_to 'Septembre', schedules_path(month: "9") %>
+          <%= link_to 'Sep.', schedules_path(month: "9") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 10 %>">
-          <%= link_to 'Octobre', schedules_path(month: "10") %>
+          <%= link_to 'Oct.', schedules_path(month: "10") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 11 %>">
-          <%= link_to 'Novembre', schedules_path(month: "11") %>
+          <%= link_to 'Nov.', schedules_path(month: "11") %>
         </li>
         <li class="nav-item mr-0 d-none d-lg-block month-toggle <%= 'active' if @month == 12 %>">
-          <%= link_to 'Decembre', schedules_path(month: "12") %>
+          <%= link_to 'Déc.', schedules_path(month: "12") %>
         </li>
       </ul>
       <div class="table-responsive">

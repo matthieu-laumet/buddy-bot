@@ -57,11 +57,24 @@
 .modal-close{
   position: absolute;
   top: 0;
-  right: -67%;
+  // right: -67%;
   font-weight: bold;
   cursor: pointer;
   font-size: 24px;
 }
+
+#modal-close-new{
+  right: -67%;
+}
+
+#modal-close-schedule {
+  position: absolute;
+  top: 2%;
+  left: 93%;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 24px;
+  }
 
 .modal-close-option {
   position: absolute;

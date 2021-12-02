@@ -14,10 +14,11 @@ $gray_navbar: #243038;
 }
 
 .nav-item {
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem .5rem;
   font-size: 1rem;
   border-radius: 3px;
   display: flex;
+  min-width: 5.2%;
 }
 
 

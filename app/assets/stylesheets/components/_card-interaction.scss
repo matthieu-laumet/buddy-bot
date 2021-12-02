@@ -18,12 +18,13 @@ $red-buddy: #e8362b;
 
 .card-interaction-description {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  // flex-direction: row;
+  // justify-content: space-evenly;
   align-items: center;
-  padding: 16px 16px 16px 100px;
+  // margin-left: 3%;
+  // padding: 16px 16px 16px 100px;
   height: 120px;
-  width: 380px;
+  width: 79%;
 }
 
 .card-interaction-img {
@@ -46,7 +47,7 @@ iframe {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 250px;
+  width: 50%;
 }
 
 .card-interaction-position {
@@ -144,6 +145,7 @@ iframe {
   justify-content: flex-end;
   align-items: center;
   text-align: center;
+  width: 44%;
 
   a {
     text-decoration: none;
@@ -168,8 +170,8 @@ iframe {
 
   .btn-notification {
     background-color: transparent;
-    margin: 0 30px;
-    width: 100px;
+    // margin: 0 30% 0 140%;
+    width: 90%;
     opacity: 0.8;
     color: #202020;
     cursor: pointer;
