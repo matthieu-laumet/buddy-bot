@@ -15,8 +15,10 @@ class Schedule < ApplicationRecord
       students = schedule.batch.users
       # itérer sur le tableau de students
       students.where.not(slack_token: nil).each do |student|
-        unless interaction.content.blank?
+        if !interaction.content.blank?
+          puts "coco1"
           Post.create(
+            media: "text",
             user: student,
             buddy: true,
             form: false,
@@ -26,7 +28,9 @@ class Schedule < ApplicationRecord
         end
 
         if interaction.photo.attached?
+          puts "coco2"
           Post.create(
+            media: "photo",
             user: student,
             buddy: true,
             form: false,
@@ -35,8 +39,10 @@ class Schedule < ApplicationRecord
           )
         end
 
-        unless interaction.html_content.blank?
+        if !interaction.html_content.blank?
+          puts "coco3"
           Post.create(
+            media: "text",
             user: student,
             buddy: true,
             form: false,
@@ -45,8 +51,10 @@ class Schedule < ApplicationRecord
           )
         end
 
-        unless interaction.question.blank?
+        if !interaction.question.blank?
+          puts "coco4"
           Post.create(
+            media: "text",
             user: student,
             buddy: true,
             form: false,
@@ -55,6 +63,7 @@ class Schedule < ApplicationRecord
           )
 
           Post.create(
+            media: "form",
             user: student,
             buddy: true,
             form: true,

@@ -15,8 +15,6 @@ class SchedulesController < ApplicationController
     end
     @schedules = filtered_schedules
     @schedule = Schedule.new
-    # @batch = Batch.find(params[:batch_id])
-    #@topic = Topic.find(params[:topic_id])
   end
 
   def create
