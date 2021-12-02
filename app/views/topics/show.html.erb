@@ -16,120 +16,115 @@
  </div>
 
 <div class="container-show-topic">
-    <div>
-      <div class="topics-components">
-        <div class="interactions-form">
-        <div>
-          <h3><%=@topic.first_accroche  %></h3>
-          <h6><%=@topic.description  %></h6>
-        </div>
-
-        <%# ---------------------------- form accordion beginning ---------------------------- %>
-          <%= render 'form_accordion', topic:@topic, interaction:@interaction %>
-        <%# ---------------------------- form accordion end ---------------------------- %>
-
-        </div>
-
-        <div class="interactions-preview">
-          <div class="cards-interaction">
-            <% if @topic.interactions.present? %>
-              <% @topic.interactions.sort_by(&:position).each do |interaction| %>
-              <div>
-                <div class="card-interaction">
-                  <div class="card-interaction-img">
-                    <% if interaction.photo.attached? %>
-                      <%= cl_image_tag(interaction.photo.key, height: 120, width: 120, crop: :fill) %>
-                    <% end %>
-                    <% if interaction.html_content.present? %>
-                      <iframe src="<%= interaction.html_content %>" width="120" height="120" frameBorder="0" >
-                      </iframe>
-                    <% end %>
-                  </div>
-                  <div class="card-interaction-description">
-                    <div class="card-interaction-contents">
-                      <div class="card-interaction-position">
-                        <h2>Interaction n°<%= interaction.position %></h2>
-                      </div>
-                    </div>
-                    <div class="card-interaction-notifications">
-                      <div>
-                        <button class="btn-notification" id="option-target-<%=interaction.id%>">
-                          <p class="modal-btn-options">
-                            <i class="fas fa-plus"></i><br>Ajouter une réponse
-                          </p>
-                        </button>
-                      </div>
-                      <%# ---------------------------- Modal beginning ----------------------------  %>
-                      <div class="modal-bg option-target-<%=interaction.id%>">
-                        <div class="modal-small">
-                          <%= render 'form_option', option: Option.new, interaction: interaction %>
-                        </div>
-                      </div>
-                      <%# ---------------------------- Modal end ----------------------------  %>
-                      <div>
-                        <p class="delete-content-btn">
-                          <%= link_to interaction_path(interaction),
-                            method: :delete, remote: true,
-                            data: { confirm: "Souhaitez-vous supprimer cette interaction ?" } do %>
-                            <i class="fas fa-trash"></i><br>Supprimer l'intéraction
-                          <% end %>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-interaction-infos hidden card-target-<%=interaction.id%>">
-                  <div class="content-theme-card">
-                    <% unless interaction.content.empty? %>
-                      <div class="infos-border">
-                        <%#= <h5>Contenus enregistrés:</h5> %>
-                        <h5>Contenu: </h5>
-                        <p><%= interaction.content %></p>
-                      </div>
-                    <% end %>
-                    <% if interaction.html_content.present? %>
-                      <div class="infos-border">
-                        <h5>Média: </h5>
-                        <p><%= interaction.html_content %></p>
-                      </div>
-                    <% end %>
-                    <% unless interaction.question.empty? %>
-                      <div class="infos-border">
-                        <h5>Question: </h5>
-                        <p><%= interaction.question %></p>
-                      </div>
-                    <% end %>
-                  </div>
-
-                  <div class="width-réponse-enregistrée">
-                    <% if interaction.options.present? %>
-                    <div class="options-theme-card">
-                      <h5 id="rep-enregistre">Réponses enregistrées:</h5>
-                      <div class="options-in-line">
-                          <% interaction.options.sort_by(&:position).each do |option| %>
-                          <div class="options-display">
-                              <p id="option-btn"><%= option.position %> - <%= option.title %></p>
-                              <%= link_to option_path(option),
-                                method: :delete, remote: true do %>
-                                <i class="fas fa-trash"></i>
-                              <% end %>
-                          </div>
-                          <div class="reponse-direct">
-                            <i class="fas fa-long-arrow-alt-right mr-2"></i>
-                            <p><%= option.next_accroche %></p>
-                          </div>
-                          <% end %>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-toggle" id="card-target-<%=interaction.id%>"><i class="fas fa-chevron-down"></i></i></div>
-              </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+  <div class="topics-components">
+    <div class="interactions-form">
+      <div>
+        <h3><%=@topic.first_accroche  %></h3>
+        <h6><%=@topic.description  %></h6>
       </div>
+
+      <%# ---------------------------- form accordion beginning ---------------------------- %>
+      <%= render 'form_accordion', topic:@topic, interaction:@interaction %>
+      <%# ---------------------------- form accordion end ---------------------------- %>
+
     </div>
+
+    <div class="interactions-preview">
+      <div class="cards-interaction">
+        <% if @topic.interactions.present? %>
+          <% @topic.interactions.sort_by(&:position).each do |interaction| %>
+            <div class="card-interaction">
+              <div class="card-interaction-img">
+                <% if interaction.photo.attached? %>
+                  <%= cl_image_tag(interaction.photo.key, height: 120, width: 120, crop: :fill) %>
+                <% end %>
+                <% if interaction.html_content.present? %>
+                  <iframe src="<%= interaction.html_content %>" width="120" height="120" frameBorder="0" >
+                  </iframe>
+                <% end %>
+              </div>
+              <div class="card-interaction-description">
+                <div class="card-interaction-contents">
+                  <div class="card-interaction-position">
+                    <h2>Interaction n°<%= interaction.position %></h2>
+                  </div>
+                </div>
+                <div class="card-interaction-notifications">
+                  <button class="btn-notification" id="option-target-<%=interaction.id%>">
+                    <p class="modal-btn-options"><i class="fas fa-plus"></i><br>Ajouter une réponse</p>
+                  </button>
+
+                  <%# ---------------------------- Modal beginning ----------------------------  %>
+                  <div class="modal-bg option-target-<%=interaction.id%>">
+                    <div class="modal-small">
+                      <%= render 'form_option', option: Option.new, interaction: interaction %>
+                    </div>
+                  </div>
+                  <%# ---------------------------- Modal end ----------------------------  %>
+
+                  <p class="delete-content-btn">
+                    <%= link_to interaction_path(interaction),
+                      method: :delete, remote: true,
+                      data: { confirm: "Souhaitez-vous supprimer cette interaction ?" } do %>
+                      <i class="fas fa-trash"></i><br>Supprimer l'intéraction
+                    <% end %>
+                  </p>
+
+                </div>
+              </div>
+            </div>
+            <div class="card-interaction-infos hidden card-target-<%=interaction.id%>">
+              <div class="content-theme-card">
+                <% unless interaction.content.empty? %>
+                  <div class="infos-border">
+                    <%#= <h5>Contenus enregistrés:</h5> %>
+                    <h5>Contenu: </h5>
+                    <p><%= interaction.content %></p>
+                  </div>
+                <% end %>
+                <% if interaction.html_content.present? %>
+                  <div class="infos-border">
+                    <h5>Média: </h5>
+                    <p><%= interaction.html_content %></p>
+                  </div>
+                <% end %>
+                <% unless interaction.question.empty? %>
+                  <div class="infos-border">
+                    <h5>Question: </h5>
+                    <p><%= interaction.question %></p>
+                  </div>
+                <% end %>
+              </div>
+
+              <div class="width-réponse-enregistrée">
+                <% if interaction.options.present? %>
+                  <div class="options-theme-card">
+                    <h5 id="rep-enregistre">Réponses enregistrées:</h5>
+                    <div class="options-in-line">
+                      <% interaction.options.sort_by(&:position).each do |option| %>
+                        <div class="options-display">
+                          <p id="option-btn"><%= option.position %> - <%= option.title %></p>
+                          <%= link_to option_path(option),
+                            method: :delete, remote: true do %>
+                            <i class="fas fa-trash"></i>
+                          <% end %>
+                        </div>
+                        <div class="reponse-direct">
+                          <i class="fas fa-long-arrow-alt-right mr-2"></i>
+                          <p><%= option.next_accroche %></p>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="card-toggle" id="card-target-<%=interaction.id%>"><i class="fas fa-chevron-down"></i></div>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
 </div>
