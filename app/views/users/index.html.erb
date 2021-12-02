@@ -4,12 +4,19 @@
       <% @users.each do |user| %>
         <div class="users-card">
           <div class="user-info">
+            <p>Prénom</p>
             <p><%= user.first_name %></p>
           </div>
           <div class="user-info">
+            <p>Nom</p>
             <p><%= user.last_name %></p>
           </div>
           <div class="user-info">
+            <p>Admin</p>
+            <p><%= user.admin %></p>
+          </div>
+          <div class="user-info">
+            <p>Mail</p>
             <p><%= user.email %></p>
           </div>
           <div>
