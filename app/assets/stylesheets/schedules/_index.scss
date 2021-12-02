@@ -3,6 +3,19 @@
   min-height: 80.5vh;
   margin: 0px 90px 20px 90px;
   padding-bottom: 80px;
+  display: flex;
+
+  H1 {
+    margin-right: 7%;
+    margin-bottom: 0;
+    margin-left: 4%;
+    color: white;
+    font-size: 30px;
+  }
+
+  .table {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -14,31 +27,36 @@ h1 {
 
 
 #tab-month{
-  justify-content: center;
+  justify-content: flex-start;
   li{
     size: 10px;
   }
 }
 
 .schedule-trash{
-  color: black;
-  text-shadow: rgb(80, 80, 80) 1px 1px 2px;
-  font-size: x-large;
+  color: rgb(50, 50, 50);;
+  font-size: 20px;
+  // text-shadow: rgb(80, 80, 80) 1px 1px 2px;
+  // font-size: x-large;
 }
 .schedule-trash:hover{
   color: red;
-  text-shadow: rgb(80, 80, 80) 1px 1px 2px;
+  font-size: 20px;
+  // text-shadow: rgb(80, 80, 80) 1px 1px 2px;
 }
 
 .schedule-eye{
-  color: black;
-  text-shadow: rgb(80, 80, 80) 1px 1px 2px;
-  font-size: x-large;
+  color: rgb(50, 50, 50);
+  font-size: 20px;
+  margin-bottom: 15px;
+  // text-shadow: rgb(80, 80, 80) 1px 1px 2px;
+  // font-size: x-large;
 
 }
 .schedule-eye:hover{
   color: red;
-  text-shadow: rgb(80, 80, 80) 1px 1px 2px;
+  font-size: 20px;
+  // text-shadow: rgb(80, 80, 80) 1px 1px 2px;
 }
 
 
@@ -72,7 +90,7 @@ h1 {
 }
 
 .bloc-title span{
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   font-family: 'Rubik', sans-serif;
 }
@@ -94,11 +112,28 @@ h1 {
   }
 }
 
+.modal-btn-schecdule {
+  margin: 0;
+}
 
+.inner-box {
+  background-color: rgb(230, 230, 230);
+  border-bottom: 4px solid rgb(110, 110, 110);
+}
 
+.table-responsive {
+  text-align: center;
+
+  .modal-btn{
+    margin-bottom: 0;
+  }
+
+}
 
 .custom-tab{
   background-color: #243038;
+  align-items: center;
+  border-radius: 6px;
 
   a{
     color: white;
@@ -108,11 +143,12 @@ h1 {
   font-size: 20px;
   font-weight: 100;
   opacity: 0.5;
+  text-align: center;
   }
 
 .month-toggle.active{
   color: #243038;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 600;
   opacity: 1;
   }
