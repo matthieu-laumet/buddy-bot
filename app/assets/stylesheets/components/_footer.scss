@@ -42,3 +42,25 @@
     color: white;
   }
 }
+
+@media(max-width: 500px) {
+  .footer {
+    height: 130px;
+    padding: 0px 20px;
+
+    a {
+      font-size: 18px;
+      padding: 0px 6px;
+    }
+
+    .footer-links {
+      margin-right: 5px;
+      margin-left: 10px;
+      text-align: center;
+    }
+
+    .footer-copyright {
+      text-align: center;
+    }
+  }
+}

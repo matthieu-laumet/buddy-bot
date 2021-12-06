@@ -51,3 +51,16 @@ $gray_navbar: #243038;
   z-index: 3;
   border-bottom: 1.5px solid white;
 }
+
+@media(max-width: 500px) {
+  .navbar {
+    z-index: 2;
+  }
+  .nav-item {
+    // padding: 0.35rem .2rem;
+    // font-size: 1rem;
+    // border-radius: 3px;
+    // display: flex;
+    min-width: 14%;
+  }
+}

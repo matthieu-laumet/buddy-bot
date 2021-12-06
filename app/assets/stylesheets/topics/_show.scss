@@ -135,3 +135,52 @@ h6{
 .simple_form {
   border-radius: 30px;
 }
+
+@media(max-width: 500px) {
+  .container-banner {
+    .degrade {
+      background: linear-gradient(90deg,rgba(35,48,56,.9),transparent 80%);
+    }
+
+    .title-topic-show {
+    top: -350px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 48px;
+    width: 75%;
+    font-size: 48px;
+    }
+  }
+
+  .container-show-topic {
+    margin: 20px 20px;
+
+    .interactions-form {
+      width: 100%;
+      min-width: 280px;
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-bottom: 40px;
+      border-bottom: 2px solid rgb(210, 210, 210);
+    }
+
+    .btn-ajouter-smartphone {
+      margin-top: 16px !important;
+      margin-bottom: 16px !important;
+    }
+
+    .interactions-preview {
+      min-width: 0;
+      width: 100%;
+      padding-left: 0px;
+      border-left: none;
+    }
+
+    .content-theme-card {
+      width: 100%;
+    }
+  }
+}

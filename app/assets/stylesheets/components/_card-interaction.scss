@@ -216,3 +216,42 @@ iframe {
 .width-réponse-enregistrée {
   width: 100%;
 }
+
+@media(max-width: 500px) {
+  .topics-components {
+    flex-direction: column;
+  }
+  .card-interaction-img {
+  object-fit: cover;
+  height: 120px;
+  width: 45%;
+  }
+
+  .card-interaction-description {
+    flex-direction: column;
+  }
+
+  .card-interaction-position {
+    margin-top: 10px;
+    margin-bottom: 14px;
+
+    h2 {
+    font-size: 20px;
+    width: 150px;
+    }
+  }
+
+  .card-interaction-notifications {
+    width: 90%;
+    margin-right: 14px;
+  }
+
+  .btn-notification {
+    width: 54%;
+  }
+
+  .options-display {
+    min-width: 105%;
+  }
+
+}

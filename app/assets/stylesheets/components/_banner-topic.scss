@@ -134,14 +134,48 @@
 
 @media(max-width: 500px) {
   .banner-topic {
-    width: 176%;
-    right: 6px;
-    height: 400px;
+    // width: 176%;
+    // right: 6px;
+    height: 430px;
+    background-image: asset-url("banner-mobile.svg");
+
+    .container-banner-topic {
+      padding-top: 30px;
+      padding-left: 30px;
+      width: 45%;
+
+      h2 {
+      font-family: 'Rubik', sans-serif;
+      margin-bottom: 15px;
+      font-size: 18px;
+      // color: white;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      .focus {
+      font-size: 14px;
+      }
+
+      .strong {
+      width: 140px;
+      }
+    }
+
+    #buddy {
+    margin: 0;
+    font-size: 40px;
+    font-family: 'Permanent Marker', cursive;
+    }
+
+    #bot {
+      margin: 0;
+      margin-left: 16px;
+      font-size: 40px;
+      font-family: 'Gloria Hallelujah', cursive;
+    }
   }
-  .navbar{
-    width: 159%;
-  }
-  .footer {
-    width: 159%;
-  }
+
 }

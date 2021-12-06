@@ -2,7 +2,7 @@
 .container-schedule{
   min-height: 81vh;
   margin: 0px 90px 20px 90px;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
   display: flex;
 
   H1 {
@@ -151,5 +151,100 @@ h1 {
   font-size: 26px;
   font-weight: 600;
   opacity: 1;
+  }
+}
+
+@media(max-width: 500px) {
+  .container-schedule {
+    margin: 0 6px;
+
+    H1 {
+      margin-left: 0;
+      margin-top: 20px;
+      margin-right: 85px;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .month-toggle {
+      font-size: 16px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .margin-left {
+      margin-left: 10px;
+      padding-right: 15px;
+    }
+
+    #tab-month {
+      padding-left: 20px;
+      padding-top: 0;
+      padding-bottom: 10px;
+    }
+
+    .table-responsive {
+      text-align: center;
+
+      .modal-btn {
+        margin-bottom: 0;
+      }
+    }
+
+    .bloc-date{
+
+      p {
+        font-size: 12px;
+      }
+
+      span{
+        font-size: 20px;
+      }
+    }
+
+    .bloc-title span{
+      font-size: 14px;
+    }
+
+    .photo{
+      width: 60px;
+      height: 60px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    .bloc-batch span{
+      font-size: 12px;
+    }
+
+    .schedule-eye {
+      font-size: 16px;
+    }
+
+    .schedule-trash {
+      font-size: 16px;
+    }
+
+
+    .table th, .table td{
+      font-size: 12px;
+    }
+
+    #new-prog {
+      position: absolute;
+      top: 8px;
+      right: 26px;
+      width: 130px;
+      font-size: 14px;
+    }
+
+    .col-photo {
+      padding-left: 10px;
+    }
+
+    .col-conversation {
+      padding-left: 17px;
+    }
+
   }
 }

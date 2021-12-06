@@ -43,12 +43,12 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Date</th>
-              <th scope="col">Photo</th>
-              <th scope="col">Conversation</th>
-              <th scope="col">Batch</th>
+              <th scope="col" class="col-date">Date</th>
+              <th scope="col" class="col-photo">Photo</th>
+              <th scope="col" class="col-conversation">Conversation</th>
+              <th scope="col" class="col-batch">Batch</th>
               <th class="text-center" scope="col">
-                <button class="btn btn-danger modal-btn">Nouvelle programmation</button>
+                <button class="btn btn-danger modal-btn" id="new-prog">Nouvelle programmation</button>
                   <div class="modal-bg">
                   <div class="modal-schedule">
                   <%= render 'form_prog', topic: @topic, batch: @batch, schedule: @schedule %>
